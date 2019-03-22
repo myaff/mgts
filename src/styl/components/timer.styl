@@ -1,0 +1,88 @@
+.timer {
+  flexy(center, flex-start);
+
+  @media $msWidthPort {
+    flex-wrap: wrap;
+  }
+    
+  .days,
+  .hours,
+  .minutes,
+  .seconds {
+    flex: 0 0 275px;
+    text-align: center;
+
+    @media $display-breakpoints.md-and-down {
+      flex-basis: 175px;
+    }
+    @media $display-breakpoints.sm-and-down {
+      flex-basis: 25%;
+    }
+    @media $msWidthPort {
+      flex-basis: 50%;
+      margin: 1.25rem 0;
+    }
+
+    .num::before,
+    .num::after {
+      content: '';
+      display: block;
+      size(1px, 1rem);
+      background: currentColor;
+
+      @media $msWidthPort {
+        height: 0.5rem;
+      }
+    }
+    .num::before {
+      absolute(0, 0px, 0px);
+    }
+    .num::after {
+      absolute(0px);
+      right: 0px;
+    }
+
+    &:first-child .num::before,
+    &:last-child .num::after {
+      display: none;
+    }
+    @media $msWidthPort {
+      &:nth-child(odd) .num::before,
+      &:nth-child(even) .num::after {
+        display: none;
+      }
+    }
+  }
+  .num {
+    font: 120px/0.7 $font-base;
+
+    @media $smWidthLand {
+      font-size: 100px;
+    }
+    @media $msWidthPort {
+      font-size: 80px;
+    }
+    @media $msWidthLand {
+      font-size: 16vh;
+    }
+    @media $msWidthPort {
+      font-size: 52px;
+    }
+  }
+  .title {
+    font: bold 21px $font-base;
+    margin-top: 2rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    @media $display-breakpoints.md-and-down {
+      margin-top: 1rem;
+    }
+    @media $msWidthLand {
+      font-size: 3.4vh;
+    }
+    @media $msWidthPort {
+      font-size: 14px;
+    }
+  }
+}

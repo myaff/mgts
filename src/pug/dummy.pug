@@ -1,0 +1,26 @@
+extends template
+
+prepend page
+  - var layout = 'dummy';
+  - var currentPage = 'dummy';
+  - var pageTitle = false;
+  - var pageDesc = false;
+  - var pageImg = false;
+
+block content
+  - var page = content[currentPage];
+  .page(class="page--" + currentPage)
+    .page-bg
+    .page-wrapper
+      .l-container
+        .page__content
+          .page__heading.tp-text--center
+            .tp-heading--small !{page.preheading}
+            .tp-heading--larger.glitch !{page.heading}
+          .page__timer
+            #timer.timer(data-final=page.date)
+          .page__text.tp-text--center
+            .title.tp-heading--smaller !{page.subheading}
+            .text.tp-body--big: p !{page.text}
+          .page__logo
+            +icon('logo').icon--block

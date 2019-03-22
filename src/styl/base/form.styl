@@ -1,0 +1,163 @@
+.field {
+
+  &__input {
+    display: block;
+    width: 100%;
+    font: 15px/1 $font-base;
+    height: 29px;
+    padding: 6px 0;
+    border: 0;
+    border-bottom: 2px solid #dbd2ec;
+    color: $primary;
+    box-sizing: border-box;
+    box-shadow: none;
+    background: transparent;
+
+    &.small {
+      width: 60px;
+    }
+
+    @media $display-breakpoints.sm-and-down {
+      
+    }
+
+    {hover-focus-active} {
+      outline: none;
+    }
+
+    textarea& {
+      min-height: 29px;
+      width: 100%;
+      min-width: 100%;
+      max-width: 100%;
+
+      @media $display-breakpoints.sm-and-down {
+        
+      }
+    }
+  }
+
+  &__label {
+    relative();
+    display: block;
+  }
+
+  &__label-text {
+    font: 15px/1.33 $font-base;
+    margin-right: 1em;
+
+    @media $display-breakpoints.sm-and-down {
+      
+    }
+  }
+
+  &__placeholder {
+    font: 15px/1 $font-base;
+    height: 27px;
+    padding: 6px 0;
+    absolute(0px, 0px);
+    color: #9c9c9c;
+    cursor: text;
+    transition: opacity 0.3s, transform 0.3s;
+
+    @media $display-breakpoints.sm-and-down {
+      
+    }
+
+    ^[0]__input:focus ~ &,
+    ^[0].has-focus &,
+    ^[0].has-value & {
+      opacity: 0;
+      transform: translateX(20%);
+    }
+  }
+}
+
+.flow-textarea {
+  overflow: hidden;
+  resize: none;
+
+  &-example {
+    font: 300 vw(24)/1 $font-base;
+    padding: vw(16) 0;
+    absolute(100%, 0px);
+    width: 100%;
+    z-index: -100;
+    opacity: 0;
+
+    @media $display-breakpoints.sm-and-down {
+      
+    }
+  }
+  &-label {
+    overflow: hidden;
+  }
+}
+
+
+// Radio
+// Checkboxes
+.field {
+  &__label {
+    ^[0]--radio &,
+    ^[0]--checkbox & {
+      flexy(flex-start, flex-start);
+      cursor: pointer;
+    }
+  }
+  &__box {
+    ^[0]--radio &,
+    ^[0]--checkbox & {
+      size(14px);
+      flex: 0 0 14px;
+      border: 2px solid currentColor;
+      color: #aaaaaa;
+      transition: all 0.3s;
+      margin-top: 2px;
+      transform: translateZ(0);
+    }
+    ^[0]--radio.is-checked &,
+    ^[0]--checkbox.is-checked & {
+      background: currentColor;
+      color: $primary;
+    }
+    ^[0]--radio & {
+      border-radius: 50%;
+    }
+    ^[0]--checkbox & {
+      border-radius: 3px;
+    }
+  }
+  &__input {
+    ^[0]--radio &,
+    ^[0]--checkbox & {
+      display: none;
+    }
+  }
+  &__text {
+    ^[0]--radio &,
+    ^[0]--checkbox & {
+      font: 15px/1.33 $font-base;
+      margin-left: 6px;
+      transform: translateZ(0);
+    }
+    ^[0]--radio.is-checked &,
+    ^[0]--checkbox.is-checked & {
+      color: $primary;
+    }
+  }
+}
+
+.fieldset {
+  &--radio {
+    flexy(flex-start, baseline);
+  }
+
+  &--radio &__label {
+    flex: 0 0 auto;
+    transform: translateZ(0);
+  }
+  &--radio &__values {
+    flexy(flex-start, flex-start);
+  }
+}

@@ -1,0 +1,48 @@
+.header {
+	absolute(0px, 0px);
+	width: 100%;
+	z-index: 9;
+	background: transparent;
+	color: $white;
+
+	a {
+		color: inherit;
+	}
+
+	&__content {
+		flexy(center, center);
+		padding: 20px 0;
+	}
+
+	&__logo {
+		fixed(0px, 0px);
+		padding: 17px 15px;
+		background: $primary;
+		color: $white;
+		
+		.icon {
+			size(172px, 56px);
+		}
+
+		.text {
+			font: 14px/1 $font-base;
+			letter-spacing: 0.05em;
+			white-space: nowrap;
+			margin-top: 0.5em;
+		}
+
+		@media $display-breakpoints.ms-and-down {
+			padding: 10px;
+			background: transparent;
+
+			.icon {
+				size(74px, 23px);
+			}
+
+			.text {
+				display: none;
+			}
+		}
+	}
+	
+}

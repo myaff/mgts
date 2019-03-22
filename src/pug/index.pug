@@ -1,0 +1,13 @@
+extends template
+
+prepend page
+	- var layout = 'home';
+	- var currentPage = 'home';
+	- var pageTitle = false;
+	- var pageDesc = false;
+	- var pageImg = false;
+
+block content
+	.page(class="page--" + currentPage)
+		.page-bg
+		.page-content MGTS

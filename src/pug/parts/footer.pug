@@ -1,0 +1,18 @@
+include ../mixins
+.footer
+  .l-container
+    .footer__content
+      .footer__age
+      .footer__partners
+        each item in partners
+          .partner
+            a.partner__link(href=item.url, target="_blank", alt=item.title)
+              img.partner__img(src=item.img, alt=item.title)
+        .partner
+          span.partner__link._age
+            +icon('18+')
+      .footer__socials
+        .footer__heart
+          +icon('heart')
+        .footer__popup
+          +social(true, false)

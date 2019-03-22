@@ -1,0 +1,61 @@
+.page--dummy {
+  .page {
+    &-bg {
+      background: url('../img/dummy.png') center no-repeat;
+      background-size: cover;
+    }
+    &__content {
+      flexy(space-between, center, nowrap, column);
+      padding: 21vh 0 50px;
+      height: 100vh;
+
+      @media $display-breakpoints.lg-and-down {
+        padding-top: 16vh;
+      }
+      @media $smWidthLand {
+        padding: 80px 0 36px;
+      }
+      @media $smWidthPort {
+        padding-top: 16vh;
+      }
+      @media $msWidthLand {
+        padding-top: 16vh;
+        padding-bottom: 5vh;
+      }
+      @media $msWidthPort {
+        padding-top: 10vh;
+        padding-bottom: 5vh;
+      }
+    }
+    &__text {
+      .title {
+        margin: 0 auto;
+        @media $msWidthPort {
+          max-width: 240px;
+        }
+      }
+      .text {
+        max-width: 530px;
+        margin: 1.5rem auto 0;
+
+        @media $display-breakpoints.md-and-down {
+          max-width: 420px;
+          margin-top: 1rem;
+        }
+      }
+    }
+    &__timer {
+      width: 100%;
+    }
+    &__logo {
+      size(207px, 76px);
+
+      @media $display-breakpoints.md-and-down {
+        size(120px, 45px);
+      }
+      @media $msWidthPort {
+        size(90px, 32px);
+      }
+    }
+  }
+}
