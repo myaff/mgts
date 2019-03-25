@@ -1,0 +1,15 @@
+- var sec = content.masks;
+.masks.section__main
+  .section__content
+    .section__heading.tp-heading--large.glitch.tp-text--center !{sec.heading}
+    .section__text.tp-body--big.tp-text--center !{sec.desc}
+    .masks__list
+      for item, index in sec.list
+        .masks__item.mask
+          .mask__img: img(src=item.img)
+          .mask__links
+            for i in item.links
+              a.mask__link.js-copy-link(href=i.url)
+                .mask__icon
+                  +icon(i.icon).icon--block
+                .mask__tooltip !{i.tooltip}

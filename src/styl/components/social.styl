@@ -40,16 +40,15 @@
 	&__title {
 		width: 100%;
 		flex: 0 0 100%;
-		font: 500 13px/1 $font-base;
+		font: 20px/1 $font-base;
 		text-align: center;
 		margin: 0 0 0.5rem;
-		text-decoration: underline;
 	}
 	&--inline &__title {
 		width: auto;
 		flex: 0 1 auto;
 		text-align: left;
-		margin: 0 2rem 0 0;
+		margin: 0 20px 0 0;
 	}
 	
 	&__delimiter {
@@ -70,18 +69,20 @@
 		margin: 0;
 
 		& + & {
-			margin-left: 4px;
+			margin-left: 20px;
 		}
 	}
 	&__link {
 		display: block;
-		size(1em);
-		flex: 0 0 2.5rem;
-		font-size: 1rem;
+		circle(1em);
+		flex: 0 0 1em;
+		font-size: 40px;
 		line-height: 1;
 		color: white;
 		transition: color 0.2s;
-		padding: 0.75rem;
+		padding: 0.5rem;
+		border: 2px solid currentColor;
+		box-sizing: border-box;
 		
 		{hover-focus-active} {
 			color: white;

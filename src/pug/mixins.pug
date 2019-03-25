@@ -5,7 +5,7 @@ mixin icon(iconName)
 mixin social(isInline, hasTitle)
 	.social&attributes(attributes)(class=isInline ? "social--inline" : '')
 		if hasTitle
-			.social__title Поделиться проектом
+			.social__title Расскажи всем:
 		#share(data-services=settings.socials)
 
 //- components
@@ -68,8 +68,8 @@ mixin dyn(sect)
 
 
 //- forms
-mixin fieldInput(inpID, inpPlaceholder, inpLabel)
-	.field.form__field
+mixin fieldInput(inpID, inpPlaceholder, inpLabel, isRequired)
+	.field.form__field(class=isRequired ? "field--required" : "")
 		if inpLabel
 			.field__label-text !{inpLabel}
 		label.field__label(for=inpID)

@@ -1,8 +1,30 @@
 - var sec = content.sections.competition
 .competition.section__main
   .section__bg.competition__bg
-  .section__content.tp-text--center
+  .section__content.tp-text--center.content-popup-conflict.active
     .section__heading.tp-heading--large.glitch !{sec.heading}
     .section__text.tp-body--big !{sec.desc}
     .section__btn
-      a.btn.btn--big.btn--default-outline(href="#") !{sec.btn}
+      a.btn.btn--big.btn--default-outline.js-popup(href=sec.btn.url) !{sec.btn.title}
+  #action-popup.section__popup.content-popup.action-popup
+    .action-popup__auth.tp-text--center.auth
+      .auth__heading.tp-heading--medium !{sec.actions.auth.heading}
+      .auth__list
+        for item in sec.actions.auth.list
+          a.auth__link(href=item.url, class="auth__link--" + item.key, title=item.title)
+            +icon(item.icon)
+    .action-popup__plug.tp-text--center
+      .plug__heading.tp-heading--medium !{sec.actions.plug.heading}
+      .plug__btn
+        a.btn.btn--default-outline.btn--large(href=sec.actions.plug.link.url) !{sec.actions.plug.link.title}
+  #code-popup.section__popup.content-popup.code-popup
+    .code.tp-text--center
+      .code__heading.tp-heading--large.glitch !{content.code.heading}
+      .code__desc.tp-body--medium !{content.code.desc}
+      .code__share
+        +social(true, true)
+      .code__note.tp-body--medium !{content.code.text}
+      .code__promocode
+        .js-copy-to-clipboard !{content.code.promocode}
+      .code__btn
+        a.btn.btn--default-outline.btn--large.js-popup(href=content.code.link.url) !{content.code.link.title}

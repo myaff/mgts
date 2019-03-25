@@ -26,7 +26,7 @@
 				"https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic"
 			]
 		},
-		"socials": "vkontakte,facebook,twitter,telegram",
+		"socials": "vkontakte,facebook",
 		"ogDefaults": {
 			"title": "MGTS Крутой",
 			"description": "OG Description",
@@ -83,7 +83,36 @@
 				"title": "Конкурс",
 				"heading": "Конкурс",
 				"desc": "Узнай какой ты&nbsp;крутой в&nbsp;рандомайзере <b>МГТС</b> и&nbsp;получи шанс выиграть год интернета <b>БЕСПЛАТНО</b>",
-				"btn": "я крутой, как"
+				"btn": {
+					"title": "я крутой, как",
+					"url": "#competition/action-popup"
+				},
+				"actions": {
+					"auth": {
+						"heading": "Авторизуйся для&nbsp;участия в&nbsp;конкурсе",
+						"list": [
+							{
+								"title": "Facebook",
+								"key": "fb",
+								"icon": "fb",
+								"url": "#"
+							},
+							{
+								"title": "Вконтакте",
+								"key": "vk",
+								"icon": "vk",
+								"url": "#"
+							}
+						]
+					},
+					"plug": {
+						"heading": "Подключи крутой тариф",
+						"link": {
+							"title": "Оставить заявку",
+							"url": "#rates"
+						}
+					}
+				}
 			},
 			"rates": {
 				"title": "Тарифы",
@@ -303,6 +332,150 @@
 						}
 					]
 				}
+			}
+		},
+		"masks": {
+			"heading": "Поздравляем!",
+			"desc": "Ты&nbsp;только что выиграл маску от&nbsp;МГТС! <br />Открой приз, перейдя в&nbsp;соц. сеть под маской.",
+			"list": [
+				{
+					"img": "build/img/mask-demo.png",
+					"links": [
+						{
+							"icon": "fb",
+							"url": "#",
+							"tooltip": "Скопировать ссылку&nbsp;Facebook"
+						},
+						{
+							"icon": "vk",
+							"url": "#",
+							"tooltip": "Скопировать ссылку&nbsp;Вконтакте"
+						}
+					]
+				},
+				{
+					"img": "build/img/mask-demo.png",
+					"links": [
+						{
+							"icon": "fb",
+							"url": "#",
+							"tooltip": "Скопировать ссылку&nbsp;Facebook"
+						},
+						{
+							"icon": "vk",
+							"url": "#",
+							"tooltip": "Скопировать ссылку&nbsp;Вконтакте"
+						}
+					]
+				},
+				{
+					"img": "build/img/mask-demo.png",
+					"links": [
+						{
+							"icon": "fb",
+							"url": "#",
+							"tooltip": "Скопировать ссылку&nbsp;Facebook"
+						},
+						{
+							"icon": "vk",
+							"url": "#",
+							"tooltip": "Скопировать ссылку&nbsp;Вконтакте"
+						}
+					]
+				},
+				{
+					"img": "build/img/mask-demo.png",
+					"links": [
+						{
+							"icon": "fb",
+							"url": "#",
+							"tooltip": "Скопировать ссылку&nbsp;Facebook"
+						},
+						{
+							"icon": "vk",
+							"url": "#",
+							"tooltip": "Скопировать ссылку&nbsp;Вконтакте"
+						}
+					]
+				},
+				{
+					"img": "build/img/mask-demo.png",
+					"links": [
+						{
+							"icon": "fb",
+							"url": "#",
+							"tooltip": "Скопировать ссылку&nbsp;Facebook"
+						},
+						{
+							"icon": "vk",
+							"url": "#",
+							"tooltip": "Скопировать ссылку&nbsp;Вконтакте"
+						}
+					]
+				},
+				{
+					"img": "build/img/mask-demo.png",
+					"links": [
+						{
+							"icon": "fb",
+							"url": "#",
+							"tooltip": "Скопировать ссылку&nbsp;Facebook"
+						},
+						{
+							"icon": "vk",
+							"url": "#",
+							"tooltip": "Скопировать ссылку&nbsp;Вконтакте"
+						}
+					]
+				}
+			]
+		},
+		"code": {
+			"heading": "Я&nbsp;крутой, приз теперь мой",
+			"desc": "<b>Поздравляем!</b> Ты&nbsp;реально крутой, потому что выиграл год бесплатного интернета от&nbsp;МГТС.",
+			"text": "Вот промокод для получения приза.<br />Срок действия промокода&nbsp;&mdash; <b>7&nbsp;дней.</b>",
+			"promocode": "WBA5553223",
+			"link": {
+				"url": "#competition/order-popup",
+				"title": "Получить приз"
+			}
+		},
+		"form": {
+			"heading": "Заявка на&nbsp;подключение",
+			"desc": "Оставьте свои контактные данные, чтобы мы&nbsp;могли уточнить детали подключения: мы&nbsp;свяжемся с&nbsp;Вами в&nbsp;ближайшее время.",
+			"note": "Отправляя заявку на&nbsp;подключение услуг, я&nbsp;соглашаюсь: на&nbsp;обработку своих данных, указанных в&nbsp;заявке с&nbsp;целью информирования по&nbsp;услугам ПАО МГТС, заключения договора и&nbsp;с&nbsp;<a href='#'>Правилами Конкурса</a>",
+			"fields": [
+				{
+					"type": "text",
+					"name": "code",
+					"label": "ПРОМОКОД",
+					"required": true,
+					"active": false
+				},
+				{
+					"type": "text",
+					"name": "name",
+					"label": "ФИО",
+					"required": true,
+					"active": true
+				},
+				{
+					"type": "tel",
+					"name": "tel",
+					"label": "Мобильный номер",
+					"required": true,
+					"active": true
+				},
+				{
+					"type": "email",
+					"name": "email",
+					"label": "Электронная почта",
+					"required": false,
+					"active": true
+				}
+			],
+			"btn": {
+				"title": "Отправить"
 			}
 		}
 	}

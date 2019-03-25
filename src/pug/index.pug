@@ -11,8 +11,12 @@ block content
 	.page(class="page--" + currentPage)
 		.fullpage
 			for item, key in content.sections
-				.section(data-anchor=key)
+				.section(data-anchor=key, id=key + "-id")
 					+dyn(key)
+		+modal('order-popup').modal--small
+			include components/order-form
+		#masks-popup.fullsize-popup
+			include components/masks
 		#fp-menu.fullpage-menu
 			.fullpage-menu__inner
 				for item, key in content.sections

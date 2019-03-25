@@ -131,6 +131,7 @@ function openModal(modal) {
     let win = modal.find('.modal__window');
     modal.fadeIn(500);
     $('html, body').css('overflow-y', 'hidden');
+    $('html').addClass('modal-opened');
     win.fadeIn(500);
     modal.trigger('modalopened');
   } else {
@@ -143,6 +144,7 @@ function closeModal(modal) {
     let win = modal.find('.modal__window');
     win.fadeOut(500);
     modal.fadeOut(500);
+    $('html').removeClass('modal-opened');
     $('html, body').css('overflow-y', '');
     modal.trigger('modalclosed')
   } else {

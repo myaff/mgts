@@ -7,9 +7,10 @@ let Share = require("./components/share");
 //let Statistic = require("./components/statistic");
 let Timer = require("./components/timer");
 let Scrollbar = require("./components/scrollbar");
+let Popups = require("./components/popups");
 
 $(document).ready(function(){
-  
+
   DeviceDetection.run();
   Helpers.init();
   Share.init();
@@ -24,6 +25,7 @@ $(document).ready(function(){
   $('html').addClass('is-animating');
   
   Fullpage.init();
+  Popups.init();
 
   //Youtube.init();
   //Statistic.init();
@@ -45,5 +47,6 @@ module.exports = {
   Scrollbar,
   //Youtube,
   //Statistic,
-  Timer
+  Timer,
+  Popups
 };

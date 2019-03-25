@@ -1,14 +1,20 @@
 .field {
+  text-align: left;
+  
+  & + & {
+    margin-top: 30px;
+  }
 
   &__input {
     display: block;
     width: 100%;
-    font: 15px/1 $font-base;
+    font: 18px/1 $font-base;
+    letter-spacing: 0.005em;
     height: 29px;
     padding: 6px 0;
     border: 0;
-    border-bottom: 2px solid #dbd2ec;
-    color: $primary;
+    border-bottom: 1px solid rgba(1, 31, 57, 0.3);
+    color: #011F39;
     box-sizing: border-box;
     box-shadow: none;
     background: transparent;
@@ -43,11 +49,21 @@
   }
 
   &__label-text {
-    font: 15px/1.33 $font-base;
-    margin-right: 1em;
+    font: 16px/1.33 $font-base;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    color: rgba(#011F39, 0.5);
 
     @media $display-breakpoints.sm-and-down {
       
+    }
+
+    ^[0]--required &::after {
+      content: '*';
+      margin-left: 0.25em;
+      vertical-align: top;
+      color: $primary;
     }
   }
 
@@ -160,4 +176,8 @@
   &--radio &__values {
     flexy(flex-start, flex-start);
   }
+}
+
+.order-form {
+  color: #062B4B;
 }

@@ -1,0 +1,10 @@
+- var sec = content.form
+.order-form.tp-text--center
+  .order-form__heading.tp-heading--medium.glitch !{sec.heading}
+  .order-form__desc !{sec.desc}
+  .order-form__fields
+    for item, index in sec.fields
+      +fieldInput('of-' + item.name, false, item.label, item.required)(type=item.type, required = item.required)
+  .order-form__note.tp-text--left !{sec.note}
+  .order-form__btn
+    button.btn.btn--primary.btn--large !{sec.btn.title}

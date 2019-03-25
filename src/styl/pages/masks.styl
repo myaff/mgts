@@ -1,0 +1,113 @@
+.masks {
+  
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    size(100vw, 100%);
+    absolute(0px, 50%);
+    transform: translateX(-50%);
+  }
+  &::before {
+    background: linear-gradient(59.45deg, #2F2E66 5.29%, rgba(47, 46, 102, 0) 73.41%), radial-gradient(563.68px at 84.31% 73.88%, #9D13C0 0%, rgba(123, 16, 169, 0) 100%), linear-gradient(164.74deg, #00B2F3 -19.13%, rgba(47, 46, 103, 0) 47.97%), #48469D;
+    z-index: 0;
+  }
+  &::after {
+    background: url('../img/bg-masks.png') center no-repeat;
+    background-size: cover;
+    z-index: 1;
+  }
+  &__list {
+    flexy(center, flex-start);
+  }
+  &__item {
+    flex: 0 0 20%;
+
+    &:nth-child(6) {
+      display: none;
+    }
+  }
+
+  .section {
+    &__content {
+      width: 100%;
+      z-index: 2;
+
+      @media $display-breakpoints.xl-only {
+        width: 90%;
+      }
+    }
+  }
+}
+
+.mask {
+  padding: 0 24px;
+
+  &__img {
+    max-width: 100%;
+    margin: 0 auto 68px;
+
+    img {
+      display: block;
+      max-width: 100%;
+      margin: 0 auto;
+      transform: scale(0.78);
+      transform-origin: center;
+      transition: transform 0.5s;
+
+      ^[0]:hover & {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__links {
+    flexy(center, center);
+  }
+  &__link {
+    flex: 0 0 64px;
+    color: $white;
+    relative();
+    margin: 0 7px;
+
+    @media $display-breakpoints.md-and-down {
+      flex-basis: 50px;
+    }
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &__icon {
+    circle(64px);
+    flexy(center, center);
+    border: 2px solid $white;
+    padding: 16px;
+    transition: all 0.3s;
+    background url('../img/circle-gradient.svg') center no-repeat;
+
+    @media $display-breakpoints.md-and-down {
+      size(50px);
+    }
+
+    ^[0]__link:hover & {
+      border-color: transparent;
+      box-shadow: 0px 0px 10px rgba(0, 178, 243, 0.15);
+    }
+  }
+  &__tooltip {
+    absolute(100%, 50%);
+    text-align: center;
+    padding-top: 10px;
+    font: 14px $font-base;
+    letter-spacing: 0.005;
+    transform: translateX(-50%) translateZ(0);
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    ^[0]__link:hover & {
+      opacity: 1;
+    }
+  }
+}

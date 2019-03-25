@@ -39,25 +39,57 @@
                       <svg class="icon">
                         <use xlink:href="#phone"></use>
                       </svg><b class="text tp-text--big">+7 495 636-0-636</b></a></div>
-            <div class="header__btn">
-              <button class="btn btn--primary">подключить крутой тариф</button>
-            </div>
+            <div class="header__btn"><a class="btn btn--primary" href="#rates">подключить крутой тариф</a></div>
           </div>
         </div>
       </div>
       <div class="page page--home">
         <div class="fullpage">
-          <div class="section" data-anchor="competition">
+          <div class="section" data-anchor="competition" id="competition-id">
                   <div class="competition section__main">
                     <div class="section__bg competition__bg"></div>
-                    <div class="section__content tp-text--center">
+                    <div class="section__content tp-text--center content-popup-conflict active">
                       <div class="section__heading tp-heading--large glitch">Конкурс</div>
                       <div class="section__text tp-body--big">Узнай какой ты&nbsp;крутой в&nbsp;рандомайзере <b>МГТС</b> и&nbsp;получи шанс выиграть год интернета <b>БЕСПЛАТНО</b></div>
-                      <div class="section__btn"><a class="btn btn--big btn--default-outline" href="#">я крутой, как</a></div>
+                      <div class="section__btn"><a class="btn btn--big btn--default-outline js-popup" href="#competition/action-popup">я крутой, как</a></div>
+                    </div>
+                    <div class="section__popup content-popup action-popup" id="action-popup">
+                      <div class="action-popup__auth tp-text--center auth">
+                        <div class="auth__heading tp-heading--medium">Авторизуйся для&nbsp;участия в&nbsp;конкурсе</div>
+                        <div class="auth__list"><a class="auth__link auth__link--fb" href="#" title="Facebook">
+                                  <svg class="icon">
+                                    <use xlink:href="#fb"></use>
+                                  </svg></a><a class="auth__link auth__link--vk" href="#" title="Вконтакте">
+                                  <svg class="icon">
+                                    <use xlink:href="#vk"></use>
+                                  </svg></a>
+                        </div>
+                      </div>
+                      <div class="action-popup__plug tp-text--center">
+                        <div class="plug__heading tp-heading--medium">Подключи крутой тариф</div>
+                        <div class="plug__btn"><a class="btn btn--default-outline btn--large" href="#rates">Оставить заявку</a></div>
+                      </div>
+                    </div>
+                    <div class="section__popup content-popup code-popup" id="code-popup">
+                      <div class="code tp-text--center">
+                        <div class="code__heading tp-heading--large glitch">Я&nbsp;крутой, приз теперь мой</div>
+                        <div class="code__desc tp-body--medium"><b>Поздравляем!</b> Ты&nbsp;реально крутой, потому что выиграл год бесплатного интернета от&nbsp;МГТС.</div>
+                        <div class="code__share">
+                                <div class="social social--inline">
+                                  <div class="social__title">Расскажи всем:</div>
+                                  <div id="share" data-services="vkontakte,facebook"></div>
+                                </div>
+                        </div>
+                        <div class="code__note tp-body--medium">Вот промокод для получения приза.<br />Срок действия промокода&nbsp;&mdash; <b>7&nbsp;дней.</b></div>
+                        <div class="code__promocode">
+                          <div class="js-copy-to-clipboard">WBA5553223</div>
+                        </div>
+                        <div class="code__btn"><a class="btn btn--default-outline btn--large js-popup" href="#competition/order-popup">Получить приз</a></div>
+                      </div>
                     </div>
                   </div>
           </div>
-          <div class="section" data-anchor="rates">
+          <div class="section" data-anchor="rates" id="rates-id">
                   <div class="rates section__main">
                     <div class="section__content">
                       <div class="section__heading tp-heading--large glitch tp-text--center">Выбери свой тариф</div>
@@ -102,7 +134,7 @@
                     </div>
                   </div>
           </div>
-          <div class="section" data-anchor="prizes">
+          <div class="section" data-anchor="prizes" id="prizes-id">
                   <div class="prizes section__main">
                     <div class="section__content tp-text--center">
                       <div class="section__heading tp-heading--large glitch">Узнай, какой ты&nbsp;крутой и&nbsp;получи шанс выиграть приз</div>
@@ -122,7 +154,7 @@
                     </div>
                   </div>
           </div>
-          <div class="section" data-anchor="winners">
+          <div class="section" data-anchor="winners" id="winners-id">
                   <div class="winners section__main">
                     <div class="section__content">
                       <div class="section__heading tp-heading--large glitch tp-text--center">Победители</div>
@@ -630,6 +662,165 @@
                       </div>
                     </div>
                   </div>
+          </div>
+        </div>
+              <div class="modal modal--small" id="order-popup">
+                <div class="modal__window">
+                  <div class="modal__close btn-close-modal">
+                          <svg class="icon icon--block">
+                            <use xlink:href="#cross"></use>
+                          </svg>
+                  </div>
+                  <div class="modal__inner">
+                    <div class="modal__content">
+                      <div class="order-form tp-text--center">
+                        <div class="order-form__heading tp-heading--medium glitch">Заявка на&nbsp;подключение</div>
+                        <div class="order-form__desc">Оставьте свои контактные данные, чтобы мы&nbsp;могли уточнить детали подключения: мы&nbsp;свяжемся с&nbsp;Вами в&nbsp;ближайшее время.</div>
+                        <div class="order-form__fields">
+                                <div class="field form__field field--required">
+                                  <div class="field__label-text">ПРОМОКОД</div>
+                                  <label class="field__label" for="of-code">
+                                    <input class="field__input" id="of-code" type="text" required>
+                                  </label>
+                                </div>
+                                <div class="field form__field field--required">
+                                  <div class="field__label-text">ФИО</div>
+                                  <label class="field__label" for="of-name">
+                                    <input class="field__input" id="of-name" type="text" required>
+                                  </label>
+                                </div>
+                                <div class="field form__field field--required">
+                                  <div class="field__label-text">Мобильный номер</div>
+                                  <label class="field__label" for="of-tel">
+                                    <input class="field__input" id="of-tel" type="tel" required>
+                                  </label>
+                                </div>
+                                <div class="field form__field">
+                                  <div class="field__label-text">Электронная почта</div>
+                                  <label class="field__label" for="of-email">
+                                    <input class="field__input" id="of-email" type="email">
+                                  </label>
+                                </div>
+                        </div>
+                        <div class="order-form__note tp-text--left">Отправляя заявку на&nbsp;подключение услуг, я&nbsp;соглашаюсь: на&nbsp;обработку своих данных, указанных в&nbsp;заявке с&nbsp;целью информирования по&nbsp;услугам ПАО МГТС, заключения договора и&nbsp;с&nbsp;<a href='#'>Правилами Конкурса</a></div>
+                        <div class="order-form__btn">
+                          <button class="btn btn--primary btn--large">Отправить</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        <div class="fullsize-popup" id="masks-popup">
+          <div class="masks section__main">
+            <div class="section__content">
+              <div class="section__heading tp-heading--large glitch tp-text--center">Поздравляем!</div>
+              <div class="section__text tp-body--big tp-text--center">Ты&nbsp;только что выиграл маску от&nbsp;МГТС! <br />Открой приз, перейдя в&nbsp;соц. сеть под маской.</div>
+              <div class="masks__list">
+                <div class="masks__item mask">
+                  <div class="mask__img"><img src="build/img/mask-demo.png"></div>
+                  <div class="mask__links"><a class="mask__link js-copy-link" href="#">
+                      <div class="mask__icon">
+                              <svg class="icon icon--block">
+                                <use xlink:href="#fb"></use>
+                              </svg>
+                      </div>
+                      <div class="mask__tooltip">Скопировать ссылку&nbsp;Facebook</div></a><a class="mask__link js-copy-link" href="#">
+                      <div class="mask__icon">
+                              <svg class="icon icon--block">
+                                <use xlink:href="#vk"></use>
+                              </svg>
+                      </div>
+                      <div class="mask__tooltip">Скопировать ссылку&nbsp;Вконтакте</div></a>
+                  </div>
+                </div>
+                <div class="masks__item mask">
+                  <div class="mask__img"><img src="build/img/mask-demo.png"></div>
+                  <div class="mask__links"><a class="mask__link js-copy-link" href="#">
+                      <div class="mask__icon">
+                              <svg class="icon icon--block">
+                                <use xlink:href="#fb"></use>
+                              </svg>
+                      </div>
+                      <div class="mask__tooltip">Скопировать ссылку&nbsp;Facebook</div></a><a class="mask__link js-copy-link" href="#">
+                      <div class="mask__icon">
+                              <svg class="icon icon--block">
+                                <use xlink:href="#vk"></use>
+                              </svg>
+                      </div>
+                      <div class="mask__tooltip">Скопировать ссылку&nbsp;Вконтакте</div></a>
+                  </div>
+                </div>
+                <div class="masks__item mask">
+                  <div class="mask__img"><img src="build/img/mask-demo.png"></div>
+                  <div class="mask__links"><a class="mask__link js-copy-link" href="#">
+                      <div class="mask__icon">
+                              <svg class="icon icon--block">
+                                <use xlink:href="#fb"></use>
+                              </svg>
+                      </div>
+                      <div class="mask__tooltip">Скопировать ссылку&nbsp;Facebook</div></a><a class="mask__link js-copy-link" href="#">
+                      <div class="mask__icon">
+                              <svg class="icon icon--block">
+                                <use xlink:href="#vk"></use>
+                              </svg>
+                      </div>
+                      <div class="mask__tooltip">Скопировать ссылку&nbsp;Вконтакте</div></a>
+                  </div>
+                </div>
+                <div class="masks__item mask">
+                  <div class="mask__img"><img src="build/img/mask-demo.png"></div>
+                  <div class="mask__links"><a class="mask__link js-copy-link" href="#">
+                      <div class="mask__icon">
+                              <svg class="icon icon--block">
+                                <use xlink:href="#fb"></use>
+                              </svg>
+                      </div>
+                      <div class="mask__tooltip">Скопировать ссылку&nbsp;Facebook</div></a><a class="mask__link js-copy-link" href="#">
+                      <div class="mask__icon">
+                              <svg class="icon icon--block">
+                                <use xlink:href="#vk"></use>
+                              </svg>
+                      </div>
+                      <div class="mask__tooltip">Скопировать ссылку&nbsp;Вконтакте</div></a>
+                  </div>
+                </div>
+                <div class="masks__item mask">
+                  <div class="mask__img"><img src="build/img/mask-demo.png"></div>
+                  <div class="mask__links"><a class="mask__link js-copy-link" href="#">
+                      <div class="mask__icon">
+                              <svg class="icon icon--block">
+                                <use xlink:href="#fb"></use>
+                              </svg>
+                      </div>
+                      <div class="mask__tooltip">Скопировать ссылку&nbsp;Facebook</div></a><a class="mask__link js-copy-link" href="#">
+                      <div class="mask__icon">
+                              <svg class="icon icon--block">
+                                <use xlink:href="#vk"></use>
+                              </svg>
+                      </div>
+                      <div class="mask__tooltip">Скопировать ссылку&nbsp;Вконтакте</div></a>
+                  </div>
+                </div>
+                <div class="masks__item mask">
+                  <div class="mask__img"><img src="build/img/mask-demo.png"></div>
+                  <div class="mask__links"><a class="mask__link js-copy-link" href="#">
+                      <div class="mask__icon">
+                              <svg class="icon icon--block">
+                                <use xlink:href="#fb"></use>
+                              </svg>
+                      </div>
+                      <div class="mask__tooltip">Скопировать ссылку&nbsp;Facebook</div></a><a class="mask__link js-copy-link" href="#">
+                      <div class="mask__icon">
+                              <svg class="icon icon--block">
+                                <use xlink:href="#vk"></use>
+                              </svg>
+                      </div>
+                      <div class="mask__tooltip">Скопировать ссылку&nbsp;Вконтакте</div></a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="fullpage-menu" id="fp-menu">

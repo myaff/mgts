@@ -52,6 +52,10 @@ body {
     background: url('../img/home.png') top center no-repeat;
     background-size: auto 100vh;
 
+    @media $display-breakpoints.lg-and-down {
+      width: calc(100% - 10.4167vw);
+    }
+
     @media $display-breakpoints.md-and-down {
       width: calc(100% - 160px);
     }

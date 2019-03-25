@@ -1,0 +1,35 @@
+extends template
+
+prepend page
+  - var layout = 'home';
+  - var currentPage = 'masks';
+  - var pageTitle = false;
+  - var pageDesc = false;
+  - var pageImg = false;
+
+block content
+  .page(class="page--" + currentPage)
+    - var sec = content.masks;
+    .section(data-anchor="masks")
+      .masks.section__main
+        .section__content
+          .section__heading.tp-heading--large.glitch.tp-text--center !{sec.heading}
+          .section__text.tp-body--big.tp-text--center !{sec.desc}
+          .masks__list
+            for item, index in sec.list
+              .masks__item.mask
+                .mask__img: img(src=item.img)
+                .mask__links
+                  for i in item.links
+                    a.mask__link.js-copy-link(href=i.url)
+                      .mask__icon
+                        +icon(i.icon).icon--block
+                      .mask__tooltip !{i.tooltip}
+    #fp-menu.fullpage-menu
+      .fullpage-menu__inner
+        for item, key in content.sections
+          a.fullpage-menu__link(href="#" + key, data-menuanchor=key) !{item.title}
+    #fp-nav.fullpage-nav
+      .fullpage-nav__inner
+        for item, key in content.sections
+          a.fullpage-nav__link(href="#" + key, data-menuanchor=key)
