@@ -1,0 +1,125 @@
+.rates {
+  .section {
+    &__content {
+      max-width: 1160px;
+    }
+  }
+
+  &__list {
+    flexy(space-between, stretch);
+    margin: 60px auto 120px;
+
+    @media $display-breakpoints.lg-and-down {
+      margin: vw(60) auto vw(120);
+    }
+    @media $display-breakpoints.md-and-down {
+      margin: 33px auto 70px;
+    }
+  }
+  &__item {
+    flex: 0 0 calc(50% - 20px);
+
+    @media $display-breakpoints.md-and-down {
+      flex-basis: calc(50% - 15px);
+    }
+  }
+}
+
+.rate-card {
+  padding: 40px;
+  background: url('../img/rate.png') center no-repeat;
+  background-size: cover;
+  border-radius: 35px;
+
+  @media $display-breakpoints.lg-and-down {
+    padding: vw(40);
+  }
+  @media $display-breakpoints.md-and-down {
+    padding: 25px 30px 30px;
+    border-radius: 25px;
+  }
+
+  &__info {
+    margin: 20px 0;
+    flexy(space-between, flex-start);
+    min-height: 84px;
+
+    @media $display-breakpoints.lg-and-down {
+      min-height: vw(84);
+    }
+    @media $display-breakpoints.md-and-down {
+      min-height: 52px;
+    }
+  }
+  &__desc {
+    flex: 1 1 auto;
+
+    .desc,
+    .option {
+      font: 21px/1 $font-base;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+
+      @media $display-breakpoints.lg-and-down {
+        font-size: vw(21);
+      }
+      @media $display-breakpoints.md-and-down {
+        font-size: 12px;
+      }
+    }
+    .speed {
+      font: bold 32px/1 $font-base;
+      letter-spacing: 0.05em;
+      margin: 5px 0;
+
+      @media $display-breakpoints.lg-and-down {
+        font-size: vw(32);
+      }
+      @media $display-breakpoints.md-and-down {
+        font-size: 18px;
+      }
+    }
+  }
+  &__price {
+    flex: 0 0 190px;
+    margin-left: 10px;
+    flexy(center, flex-start, wrap, column);
+    height: 80px;
+
+    @media $display-breakpoints.lg-and-down {
+      height: vw(80);
+      flex-basis: vw(190);
+    }
+    @media $display-breakpoints.md-and-down {
+      height: 40px;
+    }
+
+    .price {
+      font: bold 80px/1 $font-base;
+      margin-right: 5px;
+
+      @media $display-breakpoints.lg-and-down {
+        font-size: vw(80);
+      }
+      @media $display-breakpoints.md-and-down {
+        font-size: 40px;
+      }
+    }
+    .cur,
+    .per {
+      font: 32px/1 $font-base;
+      letter-spacing: 0.05em;
+
+      @media $display-breakpoints.lg-and-down {
+        font-size: vw(32);
+      }
+      @media $display-breakpoints.md-and-down {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__btn {
+    text-align: center;
+  }
+}

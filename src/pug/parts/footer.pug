@@ -2,17 +2,12 @@ include ../mixins
 .footer
   .l-container
     .footer__content
-      .footer__age
-      .footer__partners
-        each item in partners
-          .partner
-            a.partner__link(href=item.url, target="_blank", alt=item.title)
-              img.partner__img(src=item.img, alt=item.title)
-        .partner
-          span.partner__link._age
-            +icon('18+')
+      .footer__note
+        .text.tp-body--small !{company.note}
+      .footer__documents
+        each item in company.documents
+          a.document.tp-body--small(href=item.url, target="_blank", alt=item.title) !{item.title}
       .footer__socials
-        .footer__heart
-          +icon('heart')
-        .footer__popup
-          +social(true, false)
+        each item in company.socials
+          a.social(href=item.url, title=item.title)
+            +icon(item.icon)

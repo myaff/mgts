@@ -1,11 +1,12 @@
 let DeviceDetection = require("./components/device-detection");
 let Helpers = require("./components/helpers");
-//let Animation = require("./components/animation");
+let Fullpage = require("./components/fullpage");
 //let Carousel = require("./components/carousel");
 let Share = require("./components/share");
 //let Youtube = require("./components/youtube");
 //let Statistic = require("./components/statistic");
 let Timer = require("./components/timer");
+let Scrollbar = require("./components/scrollbar");
 
 $(document).ready(function(){
   
@@ -14,6 +15,7 @@ $(document).ready(function(){
   Share.init();
   //Carousel.init();
   Timer.init();
+  Scrollbar.init();
   
   $.afterlag(function(){
     $('html').addClass('is-loaded');
@@ -21,12 +23,7 @@ $(document).ready(function(){
   
   $('html').addClass('is-animating');
   
-  //Animation.init();
-
-  
-  if ((window.innerWidth > document.body.clientWidth) || !$('html').hasClass('fp-enabled')) {
-    $('.layout, .header').css({'padding-right': Helpers.getNativeScrollbarWidth() + 'px'});
-  }
+  Fullpage.init();
 
   //Youtube.init();
   //Statistic.init();
@@ -44,7 +41,8 @@ module.exports = {
   Helpers,
 	//Carousel,
   Share,
-  //Animation,
+  Fullpage,
+  Scrollbar,
   //Youtube,
   //Statistic,
   Timer

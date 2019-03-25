@@ -1,0 +1,21 @@
+- var sec = content.sections.rates
+.rates.section__main
+  .section__content
+    .section__heading.tp-heading--large.glitch.tp-text--center !{sec.heading}
+    .rates__list
+      for item, index in sec.list
+        .rates__item.rate-card
+          .rate-card__title.tp-heading--medium !{item.title}
+          .rate-card__info
+            .rate-card__desc
+              .desc !{item.desc}
+              .speed !{item.speed}
+              if item.option
+                .option !{item.option}
+            .rate-card__price
+              .price !{item.price.val}
+              .cur !{item.price.cur}
+              .per !{item.price.per}
+          .rate-card__btn
+            button.btn.btn--big.btn--default-outline !{item.btn.title}
+    .section__note.tp-body--small.tp-text--upper !{sec.note}

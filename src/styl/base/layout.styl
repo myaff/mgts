@@ -46,6 +46,17 @@ body {
     opacity: 1;
   }
 
+  &--home .page {
+    width: calc(100% - 200px);
+    margin: 0 auto;
+    background: url('../img/home.png') top center no-repeat;
+    background-size: auto 100vh;
+
+    @media $display-breakpoints.md-and-down {
+      width: calc(100% - 160px);
+    }
+  }
+
 }
 
 .layout {

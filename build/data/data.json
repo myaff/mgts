@@ -17,7 +17,8 @@
 			],
 			"foot": [
 				"build/js/vendor/moment.min.js",
-				"build/js/vendor/jquery.fullpage.min.js"
+				"build/js/vendor/jquery.fullpage.min.js",
+				"build/js/vendor/jquery.mCustomScrollbar.concat.min.js"
 			]
 		},
 		"styles": {
@@ -32,6 +33,43 @@
 			"image": "OG Image"
 		}
 	},
+	"company": {
+		"logo": {
+			"text": "cамый быстрый в Москве"
+		},
+		"tel": {
+			"title": "+7 495 636-0-636",
+			"value": "telto:+74956360636"
+		},
+		"socials": [
+			{
+				"title": "Вконтакте",
+				"icon": "vk",
+				"url": "#"
+			},
+			{
+				"title": "Facebook",
+				"icon": "fb",
+				"url": "#"
+			},
+			{
+				"title": "Instagtam",
+				"icon": "inst",
+				"url": "#"
+			}
+		],
+		"documents": [
+			{
+				"title": "Политика Безопасности МГТС",
+				"url": "#"
+			},
+			{
+				"title": "Правила Конкурса",
+				"url": "#"
+			}
+		],
+		"note": "МГТС&nbsp;&mdash; самый быстрый в&nbsp;Москве по&nbsp;результатам теста скорости интернета Москвы Ооkla <a href='https://www.speedtest.net/' target='_blank'>speedtest.net</a> на&nbsp;1&#8209;й квартал 2018&nbsp;года."
+	},
 	"content": {
 		"dummy": {
 			"preheading": "До&nbsp;старта",
@@ -39,6 +77,233 @@
 			"subheading": "Не&nbsp;пропусти свой&nbsp;шанс получить крутой приз!",
 			"text": "Участвуй в&nbsp;крутом промо от&nbsp;МГТС: <br />Узнай, какой ты&nbsp;крутой в&nbsp;рандомайзере <br />и&nbsp;получи шанс выиграть год интернета бесплатно!",
 			"date": "01/04/2019"
+		},
+		"sections": {
+			"competition": {
+				"title": "Конкурс",
+				"heading": "Конкурс",
+				"desc": "Узнай какой ты&nbsp;крутой в&nbsp;рандомайзере <b>МГТС</b> и&nbsp;получи шанс выиграть год интернета <b>БЕСПЛАТНО</b>",
+				"btn": "я крутой, как"
+			},
+			"rates": {
+				"title": "Тарифы",
+				"heading": "Выбери свой тариф",
+				"note": "Предложение действует с&nbsp;26.02.2019 по&nbsp;31.05.2019 для новых абонентов услуги &laquo;Домашний Интернет&raquo; и/или пакета услуг &laquo;Домашний Интернет + Цифровое&nbsp;ТВ&raquo; г. Москвы и&nbsp;Московской области при наличии технической возможности. Указанная стоимость пакета услуг &laquo;Домашний Интернет + Цифровое&nbsp;ТВ&raquo; действует с&nbsp;момента подключения по&nbsp;31.08.2019, далее она составит 675 руб./мес. Заявленная скорость интернета гарантируется при подключении через проводное соединение. Скорость по&nbsp;Wi-Fi зависит от&nbsp;количества и&nbsp;расположения клиентских устройств, а&nbsp;также от&nbsp;конфигурации помещения. Цены указаны с&nbsp;НДС. Подробнее&nbsp;&mdash; на&nbsp;mgts.&nbsp;ru&nbsp;или по&nbsp;тел.&nbsp;8&nbsp;495 636-0-636",
+				"list": [
+					{
+						"title": "Тариф &laquo;Крутой&raquo;",
+						"desc": "Домашний Интернет",
+						"speed": "500&nbsp;Мбит/с",
+						"option": false,
+						"price": {
+							"val": "500",
+							"cur": "₽",
+							"per": "мес"
+						},
+						"btn": {
+							"title": "Подключить"
+						}
+					},
+					{
+						"title": "Тариф &laquo;Суперкрутой&raquo;",
+						"desc": "Домашний Интернет",
+						"speed": "500&nbsp;Мбит/с",
+						"option": "+ Цифровое&nbsp;ТВ",
+						"price": {
+							"val": "555",
+							"cur": "₽",
+							"per": "мес"
+						},
+						"btn": {
+							"title": "Подключить"
+						}
+					}
+				]
+			},
+			"prizes": {
+				"title": "Призы",
+				"heading": "Узнай, какой ты&nbsp;крутой и&nbsp;получи шанс выиграть приз",
+				"desc": "Что&nbsp;бы ни&nbsp;выдал тебе рандомайзер&nbsp;&mdash; ты&nbsp;крутой и&nbsp;получишь гарантированный приз. Главное&nbsp;&mdash; делись в&nbsp;соцсети, чтобы все знали, какой ты&nbsp;крутой.",
+				"list": [
+					{
+						"title": "Год интернета <br/>500&nbsp;мбит/с бесплатно",
+						"img": "build/img/router.png",
+						"quan": {
+							"title": "Количество",
+							"val": "100шт"
+						}
+					},
+					{
+						"title": "Набор крутых масок от<br/>МГТС для твоих соцсетей",
+						"img": "build/img/mask.png",
+						"quan": {
+							"title": "Количество",
+							"val": "не ограничено"
+						}
+					}
+				]
+			},
+			"winners": {
+				"title": "Победители",
+				"heading": "Победители",
+				"desc": "Бесплатный интернет уже получили <b class='primary'>38</b>&nbsp;человек. Осталось: <b class='primary'>67</b>&nbsp;призов.<br/>Успей попасть в&nbsp;число выигравших!",
+				"list": {
+					"cols": [
+						"№",
+						"ФИО"
+					],
+					"ls": [
+						{
+							"img": "build/img/winners/1.png",
+							"name": "Грицевец Платон Владиславович"
+						},
+						{
+							"img": "build/img/winners/2.png",
+							"name": "Ерофеева Светлана Игоревна"
+						},
+						{
+							"img": "build/img/winners/3.png",
+							"name": "Гавшина Любовь Леонидовна"
+						},
+						{
+							"img": "build/img/winners/4.png",
+							"name": "Караваев Зиновий Онисимович"
+						},
+						{
+							"img": "build/img/winners/5.png",
+							"name": "Деменкова Раиса Елизаровна"
+						},
+						{
+							"img": "build/img/winners/6.png",
+							"name": "Лещёва Лиана Николаевна"
+						},
+						{
+							"img": "build/img/winners/7.png",
+							"name": "Куксюк Владлен Вячеславович"
+						},
+						{
+							"img": "build/img/winners/1.png",
+							"name": "Торопова Элеонора Казимировна"
+						},
+						{
+							"img": "build/img/winners/2.png",
+							"name": "Распутина Римма Ефимовна"
+						},
+						{
+							"img": "build/img/winners/3.png",
+							"name": "Язьков Мирон Александрович"
+						},
+						{
+							"img": "build/img/winners/4.png",
+							"name": "Якусик Алексей Игоревич"
+						},
+						{
+							"img": "build/img/winners/5.png",
+							"name": "Шумилов Георгий Евстафиевич"
+						},
+						{
+							"img": "build/img/winners/6.png",
+							"name": "Ядрышников Никанор Феликсович"
+						},
+						{
+							"img": "build/img/winners/7.png",
+							"name": "Киреева Зоя Родионовна"
+						},
+						{
+							"img": "build/img/winners/1.png",
+							"name": "Кабицина Регина Анатолиевна"
+						},
+						{
+							"img": "build/img/winners/2.png",
+							"name": "Шалупов Тарас Ульянович"
+						},
+						{
+							"img": "build/img/winners/3.png",
+							"name": "Ивлева Екатерина Игнатиевна"
+						},
+						{
+							"img": "build/img/winners/4.png",
+							"name": "Ярема Венедикт Брониславович"
+						},
+						{
+							"img": "build/img/winners/5.png",
+							"name": "Никольникова Эльвира Тимуровна"
+						},
+						{
+							"img": "build/img/winners/6.png",
+							"name": "Зыкова Клара Афанасиевна"
+						},
+						{
+							"img": "build/img/winners/7.png",
+							"name": "Юрлов Лукьян Тихонович"
+						},
+						{
+							"img": "build/img/winners/1.png",
+							"name": "Фламина ﻿Агата Феликсовна"
+						},
+						{
+							"img": "build/img/winners/2.png",
+							"name": "Николина Кира Емельяновна"
+						},
+						{
+							"img": "build/img/winners/3.png",
+							"name": "Тевосова Таисия Геннадиевна"
+						},
+						{
+							"img": "build/img/winners/4.png",
+							"name": "Низенький Владлен Леонидович"
+						},
+						{
+							"img": "build/img/winners/5.png",
+							"name": "Сиянскиха Александра Николаевна"
+						},
+						{
+							"img": "build/img/winners/6.png",
+							"name": "Алябьева Злата Елизаровна"
+						},
+						{
+							"img": "build/img/winners/7.png",
+							"name": "Кобзева Анастасия Давидовна"
+						},
+						{
+							"img": "build/img/winners/1.png",
+							"name": "Тукай Фока Федорович"
+						},
+						{
+							"img": "build/img/winners/2.png",
+							"name": "Буров Пимен Артемович"
+						},
+						{
+							"img": "build/img/winners/3.png",
+							"name": "Оськина Тамара Борисовна"
+						},
+						{
+							"img": "build/img/winners/4.png",
+							"name": "Комолова Анфиса Ираклиевна"
+						},
+						{
+							"img": "build/img/winners/5.png",
+							"name": "Дагина Анастасия Александровна"
+						},
+						{
+							"img": "build/img/winners/6.png",
+							"name": "Челомеев Варфоломей Онисимович"
+						},
+						{
+							"img": "build/img/winners/7.png",
+							"name": "Воликова Кира Давидовна"
+						},
+						{
+							"img": "build/img/winners/1.png",
+							"name": "Масмехов Егор Саввевич"
+						},
+						{
+							"img": "build/img/winners/2.png",
+							"name": "Деревсков Матвей Аполлинариевич"
+						}
+					]
+				}
+			}
 		}
 	}
 }

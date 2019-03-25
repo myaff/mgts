@@ -24,7 +24,7 @@ block page
       .layout(class="layout--" + layout, data-stage=stage ? stage : '')
         include parts/header
         block content
-      //-  include parts/footer
+        include parts/footer
       //- include counters.html
       
       each item in settings.scripts.foot

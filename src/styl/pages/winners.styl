@@ -1,0 +1,117 @@
+.winners {
+  padding: 60px 0 108px;
+
+  @media $display-breakpoints.lg-and-down {
+    padding: vw(60) 0 vw(108);
+  }
+  @media $display-breakpoints.md-and-down {
+    padding: 60px 0 80px;
+  }
+  .section {
+    &__content {
+      max-size(1000px, 100%);
+      flexy(flex-start, center);
+      flex-direction: column;
+    }
+    &__heading {
+      flex: 0 0 auto;
+    }
+    &__text {
+      max-width: 740px;
+      flex: 0 0 auto;
+    }
+  }
+  &__list {
+    flex: 0 1 auto;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+  }
+}
+
+.winners-table {
+  flexy(flex-start, flex-start);
+  flex-direction: column;
+  width: 100%;
+  min-height: 0;
+  max-height: 100%;
+  overflow: hidden;
+
+  &__head,
+  &__row {
+    flexy(flex-start, stretch);
+  }
+  &__head {
+    flex: 0 0 auto;
+    width: 100%;
+    background: linear-gradient(12.59deg, #2F2E66 5.29%, rgba(47, 46, 102, 0) 73.41%), radial-gradient(151.52px at 87.01% 116.58%, #9D13C0 0%, rgba(123, 16, 169, 0) 100%), linear-gradient(177.94deg, #00B2F3 -19.13%, rgba(47, 46, 103, 0) 47.97%), #48469D;
+  }
+  &__body {
+    flex: 0 1 auto;
+    width: 100%;
+    max-height: 100%;
+    min-height: 0;
+    overflow: hidden;
+    background: #052540;
+  }
+  &__col {
+    &:first-child {
+      flex: 0 0 29%;
+    }
+    &:last-child {
+      flex: 1 1 auto;
+    }
+  }
+  &__head &__col {
+    padding: 20px 40px;
+
+    @media $display-breakpoints.lg-and-down {
+      padding: vw(20) vw(40);
+    }
+    @media $display-breakpoints.md-and-down {
+      padding: 18px 30px;
+    }
+  }
+  &__body &__col {
+    padding: 15px 40px;
+
+    @media $display-breakpoints.lg-and-down {
+      padding: vw(15) vw(40);
+    }
+    @media $display-breakpoints.md-and-down {
+      padding: 18px 30px;
+    }
+  }
+  &__body &__row {
+    border-bottom 1px solid rgba($white, 0.2);
+  }
+}
+
+.usr {
+  flexy(flex-start, center);
+
+  &__img {
+    flex: 0 0 40px;
+    circle(40px);
+    margin-right: 20px;
+
+    @media $display-breakpoints.lg-and-down {
+      size(vw(40));
+      flex-basis: vw(40);
+    }
+    @media $display-breakpoints.md-and-down {
+      size(30px);
+      flex-basis: 30px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__name {
+    flex: 1 1 auto;
+    letter-spacing: 0.05em;
+  }
+}

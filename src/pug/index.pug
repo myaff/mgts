@@ -9,5 +9,15 @@ prepend page
 
 block content
 	.page(class="page--" + currentPage)
-		.page-bg
-		.page-content MGTS
+		.fullpage
+			for item, key in content.sections
+				.section(data-anchor=key)
+					+dyn(key)
+		#fp-menu.fullpage-menu
+			.fullpage-menu__inner
+				for item, key in content.sections
+					a.fullpage-menu__link(href="#" + key, data-menuanchor=key) !{item.title}
+		#fp-nav.fullpage-nav
+			.fullpage-nav__inner
+				for item, key in content.sections
+					a.fullpage-nav__link(href="#" + key, data-menuanchor=key)

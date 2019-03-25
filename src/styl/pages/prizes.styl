@@ -1,0 +1,54 @@
+.prizes {
+  .section {
+    &__content {
+      max-width: 830px;
+    }
+    &__heading {
+      margin-bottom: 25px;
+    }
+    &__text {
+      @media $display-breakpoints.md-and-down {
+        font-size: 16px;
+        max-width: 740px;
+      }
+    }
+  }
+  &__list {
+    margin-top: 70px;
+    flexy(space-around, flex-start);
+  }
+  &__item {
+    flex: 0 0 320px;
+  }
+}
+
+.prize {
+  text-align: center;
+  &__img {
+    flexy(center, center);
+    size(242px);
+    margin: 0 auto 32px;
+
+    @media $display-breakpoints.lg-and-down {
+      size(vw(242));
+    }
+    @media $display-breakpoints.md-and-down {
+      size(170px);
+    }
+
+    img {
+      display: block;
+      margin: auto;
+      max-size(100%);
+    }
+  }
+  &__title {
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+  }
+  &__quan {
+    @media $display-breakpoints.md-and-down {
+      font-size: 16px;
+    }
+  }
+}

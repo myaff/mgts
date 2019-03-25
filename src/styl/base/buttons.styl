@@ -4,11 +4,13 @@
   text-align: center;
   vertical-align: middle;
   border: 2px solid transparent;
-  font: 15px/16px $font-base;
-  padding: 0.75rem;
+  font: 14px/16px $font-base;
+  text-transform: uppercase;
+  padding: 0.75rem 1.25rem;
   transform: translateZ(0);
   box-sizing: border-box;
   transition: all 0.3s;
+  border-radius: 30px;
 
   {hover-focus-active} {
     text-decoration: none;
@@ -16,12 +18,24 @@
   }
 
   &--big {
-    font-size: 20px;
-    line-height: 1;
+    font-size: 18px;
+    line-height: 20px;
     font-weight: bold;
-    padding: 15px;
-    border-radius: 30px;
-    width: 290px;
+    width: 224px;
+
+    @media $display-breakpoints.md-and-down {
+      font-size: 14px;
+      line-height: 18px;
+      width: 186px;
+    }
+  }
+  &--large {
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    padding: 20px;
+    width: 260px;
   }
   &--plain {
     size(1em);
@@ -29,6 +43,7 @@
     padding: 0;
     min-width: 0;
     border: 0;
+    border-radius: 0;
   }
   &--plain-link {
     background: transparent;
@@ -39,6 +54,7 @@
     padding-bottom: 2px;
     font: 500 10px/1 $font-base;
     letter-spacing: 0.01em;
+    border-radius: 0;
   }
 
   &--circle {
@@ -55,10 +71,14 @@
 
   // colors
   &--default {
-    get-button-variant(#fff, $primary);
+    get-button-variant($white, $primary);
   }
   &--primary {
-    get-button-variant($primary, darker($primary, 0.2));
+    get-button-variant(#00ACE7, $primary);
+    box-shadow: 0px 2px 20px rgba(0, 172, 231, 0.5);
+  }
+  &--default-outline {
+    get-button-outline-variant($white, $primary);
   }
   &--primary-outline {
     get-button-outline-variant($primary);

@@ -56,6 +56,17 @@ mixin modal(modalID)
 				.modal__content
 					block
 
+mixin dyn(sect)
+	if sect == 'competition'
+		include components/competition
+	else if sect == 'rates'
+		include components/rates
+	else if sect == 'prizes'
+		include components/prizes
+	else
+		include components/winners
+
+
 //- forms
 mixin fieldInput(inpID, inpPlaceholder, inpLabel)
 	.field.form__field

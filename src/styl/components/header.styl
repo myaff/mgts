@@ -10,18 +10,53 @@
 	}
 
 	&__content {
-		flexy(center, center);
+		flexy(space-between, center);
 		padding: 20px 0;
+
+		.layout--home & {
+			padding-left: 230px;
+			padding-right: 100px;
+
+			@media $display-breakpoints.lg-and-down {
+				padding-left: vw(230);
+				padding-right: vw(100);
+			}
+			@media $display-breakpoints.md-and-down {
+				padding-left: 170px;
+				padding-right: 80px;
+			}
+		}
 	}
 
 	&__logo {
 		fixed(0px, 0px);
-		padding: 17px 15px;
+		padding: 17px 25px;
 		background: $primary;
 		color: $white;
+
+		@media $display-breakpoints.lg-and-down {
+			padding: vw(17) vw(25);
+		}
+		@media $display-breakpoints.md-and-down {
+			padding: 16px 20px;
+		}
+		@media $display-breakpoints.ms-and-down {
+			padding: 10px;
+			background: transparent;
+		}
 		
 		.icon {
 			size(172px, 56px);
+
+			@media $display-breakpoints.lg-and-down {
+				size(vw(172), vw(56));
+			}
+			@media $display-breakpoints.md-and-down {
+				size(140px, 40px);
+			}
+			@media $display-breakpoints.ms-and-down {
+				size(74px, 23px);
+			}
 		}
 
 		.text {
@@ -29,20 +64,23 @@
 			letter-spacing: 0.05em;
 			white-space: nowrap;
 			margin-top: 0.5em;
-		}
 
-		@media $display-breakpoints.ms-and-down {
-			padding: 10px;
-			background: transparent;
-
-			.icon {
-				size(74px, 23px);
+			@media $display-breakpoints.lg-and-down {
+				font-size: vw(14);
 			}
-
-			.text {
+			@media $display-breakpoints.md-and-down {
+				font-size: 11px;
+			}
+			@media $display-breakpoints.ms-and-down {
 				display: none;
 			}
 		}
 	}
-	
+
+
+	&__tel {
+		.text {
+			margin-left: 0.25em;
+		}
+	}
 }

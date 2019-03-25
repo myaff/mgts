@@ -1,0 +1,33 @@
+.competition {
+  align-items: flex-end;
+  
+  &__bg {
+    background: url('../img/hero.png') top center no-repeat;
+    background-size: contain;
+  }
+  .section {
+    &__content {
+      max-width: 900px;
+      padding: 46px 20px 90px;
+      background: url('../img/content-lg.png') top center no-repeat;
+      border-top-left-radius: 35px;
+      border-top-right-radius: 35px;
+
+      @media $display-breakpoints.lg-and-down {
+        max-width: vw(1160);
+      }
+      @media $display-breakpoints.md-and-down {
+        max-width: 900px;
+        padding: 30px 20px 70px;
+      }
+    }
+    &__text {
+      @media $display-breakpoints.lg-and-down {
+        max-width: vw(580);
+      }
+      @media $display-breakpoints.md-and-down {
+        max-width: 500px;
+      }
+    }
+  }
+}

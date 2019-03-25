@@ -79,48 +79,6 @@ function getNativeScrollbarWidth (container) {
   return barWidth;
 }
 
-/**
- * Throttle Helper
- * https://remysharp.com/2010/07/21/throttling-function-calls
- */
-function throttle (fn, threshhold, scope) {
-  threshhold || (threshhold = 250);
-  let last,
-    deferTimer;
-  return function () {
-    let context = scope || this;
-
-    let now = +new Date(),
-      args = arguments;
-    if (last && now < last + threshhold) {
-      // hold on to it
-      clearTimeout(deferTimer);
-      deferTimer = setTimeout(function () {
-        last = now;
-        fn.apply(context, args);
-      }, threshhold);
-    } else {
-      last = now;
-      fn.apply(context, args);
-    }
-  }
-}
-
-/** 
- * Debounce Helper
- * https://remysharp.com/2010/07/21/throttling-function-calls
- */
-function debounce (fn, delay) {
-  let timer = null;
-  return function () {
-    let context = this, args = arguments;
-    clearTimeout(timer);
-    timer = setTimeout(function () {
-      fn.apply(context, args);
-    }, delay);
-  };
-};
-
 let timer;
 let timeout = false;
 let delta = 200;
@@ -267,11 +225,6 @@ function init(){
     }
   });
 
-  setScrollpad($('.layout, .header'));
-
-  $(window).on('resizeend', function(){
-    setScrollpad($('.layout, .header'));
-  });
   
   $('.btn-menu').on('click', function(e){
     e.preventDefault();
