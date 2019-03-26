@@ -50,6 +50,7 @@
     text-transform: uppercase;
     color: $white;
     padding: 15px 20px;
+    transform: translateZ(0);
 
     @media $display-breakpoints.lg-and-down {
       font-size: vw(24);
@@ -62,7 +63,12 @@
       border-bottom-width: 5px;
     }
 
-    &:hover {
+    &:focus {
+      color: $white;
+    }
+
+    &:hover,
+    &:active {
       color: $primary-alt;
     }
     &.active {

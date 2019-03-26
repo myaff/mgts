@@ -23,6 +23,8 @@ function getPopup (str) {
   let popup;
   if (!!~str.indexOf('/')) {
     popup = $('#' + str.slice(str.indexOf('/') + 1));
+  } else {
+    popup = $('#' + str);
   }
   return popup;
 }
@@ -76,4 +78,8 @@ function init () {
   }
 }
 
-module.exports = {init};
+module.exports = {
+  init,
+  openPopup,
+  closeAllPopups
+};
