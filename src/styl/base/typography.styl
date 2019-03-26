@@ -68,6 +68,18 @@ a {
       font-size: vw(42);
     }
   }
+  &--medium-2 {
+    font: bold 36px $font-base;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+
+    @media $display-breakpoints.lg-and-down {
+      font-size: vw(36);
+    }
+    @media $display-breakpoints.md-and-down {
+      font-size: 18px;
+    }
+  }
   &--medium {
     font: bold 32px $font-base;
     text-transform: uppercase;
@@ -135,6 +147,13 @@ a {
   }
   &--medium {
     font: 20px/1.43 $font-util;
+
+    @media $display-breakpoints.lg-and-down {
+      //font-size: vw(20);
+    }
+    @media $display-breakpoints.md-and-down {
+      font-size: 16px;
+    }
   }
   &--base {
     font: 1rem/1.5 $font-base;

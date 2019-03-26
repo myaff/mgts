@@ -5,7 +5,7 @@
     .section__heading.tp-heading--large.glitch !{sec.heading}
     .section__text.tp-body--big !{sec.desc}
     .section__btn
-      a.btn.btn--big.btn--default-outline.js-popup(href=sec.btn.url) !{sec.btn.title}
+      a.btn.btn--large.btn--default-outline.js-popup(href=sec.btn.url) !{sec.btn.title}
   #action-popup.section__popup.content-popup.action-popup
     .action-popup__auth.tp-text--center.auth
       .auth__heading.tp-heading--medium !{sec.actions.auth.heading}
@@ -19,7 +19,8 @@
         a.btn.btn--default-outline.btn--large(href=sec.actions.plug.link.url) !{sec.actions.plug.link.title}
   #code-popup.section__popup.content-popup.code-popup
     .code.tp-text--center
-      .code__heading.tp-heading--large.glitch !{content.code.heading}
+      .code__img: img(src=content.code.img)
+      .code__heading.tp-heading--medium-2.glitch !{content.code.heading}
       .code__desc.tp-body--medium !{content.code.desc}
       .code__share
         +social(true, true)

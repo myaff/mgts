@@ -40,7 +40,7 @@
 	&__title {
 		width: 100%;
 		flex: 0 0 100%;
-		font: 20px/1 $font-base;
+		font: bold 20px/1 $font-base;
 		text-align: center;
 		margin: 0 0 0.5rem;
 	}
@@ -80,9 +80,13 @@
 		line-height: 1;
 		color: white;
 		transition: color 0.2s;
-		padding: 0.5rem;
+		padding: 0.2em;
 		border: 2px solid currentColor;
 		box-sizing: border-box;
+
+		@media $display-breakpoints.md-and-down {
+			font-size: 30px;
+		}
 		
 		{hover-focus-active} {
 			color: white;

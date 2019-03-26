@@ -3,6 +3,10 @@
   
   & + & {
     margin-top: 30px;
+
+    @media $display-breakpoints.md-and-down {
+      margin-top: 1rem;
+    }
   }
 
   &__input {
@@ -10,7 +14,7 @@
     width: 100%;
     font: 18px/1 $font-base;
     letter-spacing: 0.005em;
-    height: 29px;
+    height: 31px;
     padding: 6px 0;
     border: 0;
     border-bottom: 1px solid rgba(1, 31, 57, 0.3);
@@ -21,6 +25,11 @@
 
     &.small {
       width: 60px;
+    }
+
+    @media $display-breakpoints.md-and-down {
+      font-size: 16px;
+      height: 29px;
     }
 
     @media $display-breakpoints.sm-and-down {
@@ -54,6 +63,11 @@
     text-transform: uppercase;
     margin-bottom: 5px;
     color: rgba(#011F39, 0.5);
+
+    @media $display-breakpoints.md-and-down {
+      font-size: 14px;
+      margin-bottom: 0;
+    }
 
     @media $display-breakpoints.sm-and-down {
       

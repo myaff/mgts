@@ -34,11 +34,18 @@
       }
     }
     &__text {
+      max-width: 550px;
       @media $display-breakpoints.lg-and-down {
-        max-width: vw(580);
+        max-width: vw(550);
       }
       @media $display-breakpoints.md-and-down {
-        max-width: 500px;
+        max-width: 450px;
+      }
+    }
+    &__btn {
+      .btn--large {
+        padding-right: 32px;
+        padding-left: 32px;
       }
     }
     &__popup {
@@ -51,10 +58,15 @@
       z-index: -9;
 
       &.code-popup {
-        padding: 60px 20px;
+        padding: 40px 20px 60px;
         background: url('../img/content-big.png') top center no-repeat;
+        background-size: cover;
         border-top-left-radius: 35px;
         border-top-right-radius: 35px;
+
+        @media $display-breakpoints.md-and-down {
+          padding: vw(30, 1024) 20px;
+        }
       }
 
       &.active {
@@ -125,23 +137,36 @@
 }
 
 .code {
+
+  &__img {
+    max-width: 170px;
+    margin: 0 auto 10px;
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+  }
   
   &__desc {
-    margin: 30px auto;
-    max-width: 430px;
+    margin: 30px auto 10px;
+
+    @media $display-breakpoints.md-and-down {
+      margin: 20px auto 10px;
+    }
   }
 
   &__share {
-    margin: 30px auto;
+    margin: 10px auto;
   }
 
   &__note {
-    margin: 30px auto;
+    margin: 10px auto;
   }
 
   &__promocode {
     width: 255px;
-    margin: 30px auto 48px;
+    margin: 30px auto 40px;
     padding: 20px;
     font: bold 28px/1 $font-base;
     letter-spacing: 0.005em;
@@ -150,6 +175,13 @@
     background: $primary-alt;
     color: $white;
     box-shadow: 0px 0px 40px rgba(0, 178, 243, 0.5);
+
+    @media $display-breakpoints.md-and-down {
+      font-size: vw(22, 1024);
+      width: vw(200, 1024);
+      padding: vw(16, 1024);
+      margin: 20px auto 30px;
+    }
 
     &::before {
       content: '';
