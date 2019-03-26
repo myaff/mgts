@@ -66,16 +66,17 @@ function init () {
     if (popup) {
       openPopup(hash);
     }
-    $('.js-popup').on('click', function() {
-      let target = $(this).attr('href');
-      let screen = getScreen(target);
-      if(!screen.hasClass('active')) {
-        $.fn.fullpage.moveTo(screen.data('anchor'));
-      }
-      openPopup(target);
-    });
-    
+
   }
+
+  $('.js-popup').on('click', function() {
+    let target = $(this).attr('href');
+    let screen = getScreen(target);
+    if(!screen.hasClass('active')) {
+      $.fn.fullpage.moveTo(screen.data('anchor'));
+    }
+    openPopup(target);
+  });
 }
 
 module.exports = {

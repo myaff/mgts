@@ -2,7 +2,7 @@ include ../mixins
 .header
   .l-container
     .header__content
-      .header__logo.header__logo--main
+      a.header__logo.header__logo--main(href=company.logo.url)
         +icon('logo-mgts')
         .text !{company.logo.text}
       .header__menu.l-hidden
