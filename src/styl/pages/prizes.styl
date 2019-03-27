@@ -2,6 +2,11 @@
   .section {
     &__content {
       max-width: 830px;
+
+      @media $display-breakpoints.sm-and-down {
+        padding-top: vmin(20, 320);
+        padding-bottom: vmin(20, 320);
+      }
     }
     &__heading {
       margin-bottom: 25px;
@@ -11,19 +16,40 @@
         font-size: 16px;
         max-width: 740px;
       }
+      @media $display-breakpoints.sm-and-down {
+        margin: vmin(40, 320) 0;
+        font-size: vmin(14, 320);
+        max-width: 100%;
+      }
     }
   }
   &__list {
     margin-top: 70px;
     flexy(space-around, flex-start);
+
+    @media $display-breakpoints.sm-and-down {
+      display: block;
+      margin: vmin(40, 320) 0;
+    }
   }
   &__item {
     flex: 0 0 320px;
+
+    @media $display-breakpoints.sm-and-down {
+      margin: vmin(40, 320) 0;
+    }
+  }
+  &__documents {
+    fllexy(space-between, flex-start);
   }
 }
 
 .prize {
   text-align: center;
+  @media $display-breakpoints.sm-and-down {
+    flexy(flex-start, center);
+    text-align: left;
+  }
   &__img {
     flexy(center, center);
     size(242px);
@@ -34,6 +60,12 @@
     }
     @media $display-breakpoints.md-and-down {
       size(170px);
+    }
+    @media $display-breakpoints.sm-and-down {
+      size(vmin(64, 320));
+      flex: 0 0 vmin(64, 320);
+      margin: 0;
+      margin-right: vmin(16, 320);
     }
 
     img {
@@ -49,6 +81,22 @@
   &__quan {
     @media $display-breakpoints.md-and-down {
       font-size: 16px;
+    }
+    @media $display-breakpoints.sm-and-down {
+      font-size: vmin(14, 320);
+    }
+  }
+}
+
+.prizes-doc {
+  &__link {
+    margin: vmin(12, 320);
+    font: bold vmin(14, 320)/1 $font-base;
+    text-decoration: underline;
+    color: $primary-alt;
+
+    {hover-focus-active} {
+      color: $primary;
     }
   }
 }

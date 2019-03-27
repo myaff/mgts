@@ -1,9 +1,20 @@
 .competition {
   align-items: flex-end;
+  height: 100vh;
+
+  @media $display-breakpoints.sm-and-down {
+    height: auto;
+    min-height: 100vh;
+  }
   
   &__bg {
     background: url('../img/hero.png') top center no-repeat;
     background-size: contain;
+
+    @media $display-breakpoints.sm-and-down {
+      background: url('../img/hero-sm.png') top center no-repeat;
+      background-size: contain;
+    }
   }
   .section {
     &__content,
@@ -11,6 +22,7 @@
       max-width: 900px;
       padding: 46px 20px 90px;
       background: url('../img/content-lg.png') top center no-repeat;
+      background-size: cover;
       border-top-left-radius: 35px;
       border-top-right-radius: 35px;
       transform: translateY(100%);
@@ -32,6 +44,16 @@
         max-width: 900px;
         padding: 30px 20px 70px;
       }
+      @media $display-breakpoints.sm-and-down {
+        border-radius: 0;
+        transform: translateY(0);
+        padding: vmin(30, 320) vmin(20, 320) vmin(70, 320);
+      }
+    }
+    &__content {
+      @media $display-breakpoints.sm-and-down {
+        margin-top: vmin(200, 320);
+      }
     }
     &__text {
       max-width: 550px;
@@ -42,10 +64,20 @@
         max-width: 450px;
       }
     }
+    &__heading {
+      @media $display-breakpoints.sm-and-down {
+        font-size: vmin(24, 320);
+      }
+    }
     &__btn {
       .btn--large {
         padding-right: 32px;
         padding-left: 32px;
+
+        @media $display-breakpoints.sm-and-down {
+          padding-left: 1.5em;
+          padding-right: 1.5em;
+        }
       }
     }
     &__popup {
@@ -57,6 +89,18 @@
       opacity: 0;
       z-index: -9;
 
+      @media $display-breakpoints.sm-and-down {
+        width: 100%;
+        left: 0;
+        transform: translate(100%, 0);
+      }
+
+      &.action-popup {
+        @media $display-breakpoints.sm-and-down {
+          background: $white;
+        }
+      }
+
       &.code-popup {
         padding: 40px 20px 60px;
         background: url('../img/content-big.png') top center no-repeat;
@@ -67,6 +111,11 @@
         @media $display-breakpoints.md-and-down {
           padding: vw(30, 1024) 20px;
         }
+        @media $display-breakpoints.sm-and-down {
+          padding: vw(20, 320) vmin(20, 320) vmin(40, 320);
+          border-radius: 0;
+          background-image: url('../img/content-big-sm.png');
+        }
       }
 
       &.active {
@@ -74,6 +123,10 @@
         opacity: 1;
         z-index: 2;
         transition: transform 0.5s, opacity 0.3s, z-index 0.1s;
+
+        @media $display-breakpoints.sm-and-down {
+          transform: translate(0, 0);
+        }
       }
     }
   }
@@ -81,17 +134,49 @@
 
 .action-popup {
   flexy(center, stretch);
-  &__auth {
+
+  @media $display-breakpoints.sm-and-down {
+    display: block;
+    overflow-y: auto;
+
+    .competition & {
+      fixed(0px, 0px);
+      height: 100vh;
+    }
+  }
+
+  &__header {
+    padding: vmin(20, 320);
+    flexy(space-between, center);
+  }
+  &__close {
+    margin: vmin(-10, 320) (vmin(-10, 320));
+    margin-left: auto;
+  }
+
+  &__auth,
+  &__plug {
     flex: 0 0 50%;
+    padding: 60px 20px;
+
+    @media $display-breakpoints.sm-and-down {
+      flex: 0 0 100%;
+      padding: vmin(50, 320) vmin(20, 320) vmin(70, 320);
+    }
+  }
+
+  &__auth {
     border-top-left-radius: inherit;
     background: $white;
     color: #062B4B;
-    padding: 60px 20px;
   }
   &__plug {
-    flex: 0 0 50%;
     border-top-right-radius: inherit;
-    padding: 60px 20px;
+
+    @media $display-breakpoints.sm-and-down {
+      background: url('../img/content-sm.png') center no-repeat;
+      background-size: cover;
+    }
   }
 }
 
@@ -99,6 +184,12 @@
   &__heading {
     max-width: 240px;
     margin: 0 auto 30px;
+
+    @media $display-breakpoints.sm-and-down {
+      font-size: vmin(24, 320);
+      margin-bottom: vmin(20, 320);
+      max-width: 100%;
+    }
   }
   &__list {
     flexy(center, center);
@@ -113,11 +204,18 @@
     box-sizing: border-box;
     color: $white;
 
+    @media $display-breakpoints.sm-and-down {
+      flex: 0 0 vmin(50, 320);
+      size(vmin(50, 320));
+      padding: vmin(15, 320);
+    }
+
     {hover-focus-active} {
       color: $white;
     }
 
     .icon {
+      display: block;
       size(100%);
     }
 
@@ -133,6 +231,12 @@
   &__heading {
     max-width: 240px;
     margin: 0 auto 50px;
+
+    @media $display-breakpoints.sm-and-down {
+      font-size: vmin(24, 320);
+      margin-bottom: vmin(20, 320);
+      max-width: 100%;
+    }
   }
 }
 
@@ -142,9 +246,16 @@
     max-width: 170px;
     margin: 0 auto 10px;
 
+    @media $display-breakpoints.md-and-down {
+      max-width: vmin(130, 1024);
+    }
+    @media $display-breakpoints.sm-and-down {
+      max-width: vmin(100, 320);
+    }
+
     img {
       display: block;
-      max-width: 100%;
+      width: 100%;
     }
   }
   
@@ -183,12 +294,24 @@
       margin: 20px auto 30px;
     }
 
+    @media $display-breakpoints.sm-and-down {
+      font-size: vmin(22, 320);
+      width: vmin(180, 320);
+      padding: vmin(13, 320) vmin(16, 320);
+      margin: vmin(20, 320) auto vmin(30, 320);
+    }
+
     &::before {
       content: '';
       display: block;
       absolute(-1px, -10px, -1px, -10px);
       background: url('../img/substract.svg') center no-repeat;
       background-size: contain;
+
+      @media $display-breakpoints.sm-and-down {
+        left: vmin(-10, 320);
+        right: vmin(-10, 320);
+      }
     }
   }
 }

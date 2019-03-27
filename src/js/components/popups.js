@@ -2,85 +2,121 @@
  * Переключение классов по различным событиям
  * @module Popups
  */
-var screens;
 
-function getScreen (str) {
-  let screen;
-  if (!~str.indexOf('/')) {
-    screen = $(str + '-id');
-  } else if (!!~str.indexOf('/') && !str.slice(str.indexOf('/') + 1).length) {
-    screen = $(str.slice(0, hash.indexOf('/')));
-  } else {
-    screen = $(str.slice(0, str.indexOf('/')) + '-id');
-  }
-  if (!!~screens.indexOf(screen.data('anchor'))) {
-    screen = $('#' + $('.fp-section.active').data('anchor') + '-id');
-  }
-  return screen;
-}
-
-function getPopup (str) {
-  let popup;
-  if (!!~str.indexOf('/')) {
-    popup = $('#' + str.slice(str.indexOf('/') + 1));
-  } else {
-    popup = $('#' + str);
-  }
-  return popup;
-}
-
-
-function openPopup (href) {
-  let popup = getPopup(href);
+function openPopup (id) {
+  let popup = $(id);
   if (popup.hasClass('content-popup')) {
     popup.addClass('active');
     $('.content-popup-conflict').removeClass('active');
+    if (popup.hasClass('action-popup')){
+      if (Main.DeviceDetection.isMobile()) {
+        $('html, body').animate({'scrollTop': 0}, 500);
+        $('html, body').css('overflow', 'hidden');
+      }
+      $('html').addClass('popup-opened');
+    }
   } else if (popup.hasClass('fullsize-popup')) {
+    $('html, body').css('overflow', 'hidden');
+    $('html').addClass('modal-opened');
     popup.fadeIn(500);
   } else {
-    Main.Helpers.openModal(popup);
+    openModal(popup);
   }
 }
+function closePopup (id) {
+  let popup = $(id);
+  if (popup.hasClass('content-popup')) {
+    popup.removeClass('active');
+    $('html').removeClass('popup-opened');
+    $('.content-popup-conflict').addClass('active');
+  } else if (popup.hasClass('fullsize-popup')) {
+    popup.fadeOut(500);
+    $('html').removeClass('modal-opened');
+  }
+  $('html, body').css('overflow', 'visible');
+}
 function closeAllPopups () {
-  $('.content-popup').removeClass('active');
+  $('.content-popup, fullsize-popup').removeClass('active');
   $('.content-popup-conflict').addClass('active');
 }
 
+
+/* Modals */
+function openModal(modal) {
+  if (modal) {
+    let win = modal.find('.modal__window');
+    modal.fadeIn(500);
+    $('html, body').css('overflow', 'hidden');
+    $('html').addClass('modal-opened');
+    win.fadeIn(500);
+    modal.trigger('modalopened');
+  } else {
+    console.error('Which modal?');
+  }
+}
+
+function closeModal(modal) {
+  if (modal) {
+    let win = modal.find('.modal__window');
+    win.fadeOut(500);
+    modal.fadeOut(500);
+    $('html').removeClass('modal-opened');
+    if (Main.DeviceDetection.isMobile()) {
+      $('html, body').css('overflow', 'visible');
+    }
+    modal.trigger('modalclosed')
+  } else {
+    console.error('Which modal?');
+  }
+}
+
+
 function init () {
 
-  screens = Main.Fullpage.getScreensArr();
-  let hash = window.location.hash;
-  let screen, popup;
-  if (hash) {
-    // если нет /
-    if (!~hash.indexOf('/')) {
-      screen = $(hash + '-id');
-    // или если есть / , но после нее ничего нет
-    } else if (!!~hash.indexOf('/') && !hash.slice(hash.indexOf('/') + 1).length) {
-      screen = $(hash.slice(0, hash.indexOf('/')));
-    } else {
-      screen = $(hash.slice(0, hash.indexOf('/')) + '-id');
-      popup = $('#' + hash.slice(hash.indexOf('/') + 1));
-    }
+  let hash = (window.location.hash && (window.location.hash.length > 1)) ? window.location.hash : null;
 
-    if (popup) {
-      openPopup(hash);
-    }
-
+  if (hash && $(hash).hasClass('popup')) {
+    openPopup(hash);
+    Main.Helpers.removeHash();
   }
 
-  $('.js-popup').on('click', function() {
+  $('.js-popup').on('click', function(e) {
+    e.preventDefault();
     let target = $(this).attr('href');
-    let screen = getScreen(target);
-    if(!screen.hasClass('active')) {
-      $.fn.fullpage.moveTo(screen.data('anchor'));
-    }
     openPopup(target);
   });
+  $('.js-close-popup').on('click', function(e) {
+    e.preventDefault();
+    let target = $(this).data('target') ? $(this).data('target') : '#' + $(this).closest('.popup').attr('id');
+    closePopup(target);
+  })
+  
+  $('.btn-close-modal').on('click', function(){
+    let modal = !!$(this).data('target') ? $($(this).data('target')) : $(this).closest('.modal');
+    closeModal(modal);
+  });
+
+  $('.modal').on('click', function() {
+    closeModal($(this));
+  });
+
+  $('.modal__window').on('click', function(e) {
+    e.stopPropagation();
+  });
+
+  $('.btn-modal').on('click', function(e) {
+    let target = $(this).data('target') === 'self' ? $(this).parent() : $($(this).data('target'));
+    e.preventDefault();
+    openModal(target);
+  });
+
 }
 
 module.exports = {
   init,
   openPopup,
-  closeAllPopups
+  closeAllPopups,
+  closePopup,
+  openModal,
+  closeModal
 };

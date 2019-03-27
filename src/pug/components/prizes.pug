@@ -7,7 +7,11 @@
       for item, index in sec.list
         .prizes__item.prize
           .prize__img: img(src=item.img, title=item.title)
-          .prize__title.tp-body--big: b !{item.title}
-          .prize__quan.tp-body--big
-            span !{item.quan.title + '&nbsp;'}
-            b !{item.quan.val}
+          .prixe__info
+            .prize__title.tp-body--big: b !{item.title}
+            .prize__quan.tp-body--big
+              span !{item.quan.title + '&nbsp;'}
+              b !{item.quan.val}
+    .prizes__documents.prizes-doc.l-hidden-sm-up
+      for item in company.documents
+        a.prizes-doc__link(href=item.url) !{item.titleShort ? item.titleShort : item.title}

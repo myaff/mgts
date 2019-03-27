@@ -26,18 +26,21 @@
                       <use xlink:href="#logo-mgts"></use>
                     </svg>
               <div class="text">cамый быстрый в Москве</div></a>
-            <div class="header__menu l-hidden">
+            <div class="header__menu l-hidden-md-up">
               <div class="btn-menu">
-                <div></div>
-                <div></div>
-                <div></div>
+                      <svg class="icon open">
+                        <use xlink:href="#burger"></use>
+                      </svg>
+                      <svg class="icon close">
+                        <use xlink:href="#cross"></use>
+                      </svg>
               </div>
             </div>
-            <div class="header__tel"><a class="tel-link" href="telto:+74956360636">
+            <div class="header__tel l-hidden-sm-down"><a class="tel-link" href="telto:+74956360636">
                       <svg class="icon">
                         <use xlink:href="#phone"></use>
                       </svg><b class="text tp-text--big">+7 495 636-0-636</b></a></div>
-            <div class="header__btn"><a class="btn btn--primary" href="#rates">подключить крутой тариф</a></div>
+            <div class="header__btn l-hidden-sm-down"><a class="btn btn--primary fp-link" href="#rates" data-menuanchor="rates">подключить крутой тариф</a></div>
           </div>
         </div>
       </div>
@@ -49,9 +52,18 @@
                     <div class="section__content tp-text--center content-popup-conflict active">
                       <div class="section__heading tp-heading--large glitch">Конкурс</div>
                       <div class="section__text tp-body--big">Узнай какой ты&nbsp;крутой в&nbsp;рандомайзере <b>МГТС</b> и&nbsp;получи шанс выиграть год интернета <b>БЕСПЛАТНО</b></div>
-                      <div class="section__btn"><a class="btn btn--large btn--default-outline js-popup" href="#competition/action-popup">Получить свой рэп псевдоним</a></div>
+                      <div class="section__btn"><a class="btn btn--large btn--default-outline js-popup" href="#action-popup">Получить свой рэп псевдоним</a></div>
                     </div>
-                    <div class="section__popup content-popup action-popup" id="action-popup">
+                    <div class="section__popup popup content-popup action-popup" id="action-popup">
+                      <div class="action-popup__header l-hidden-md-up">
+                        <div class="action-popup__close">
+                          <button class="btn btn--plain btn--square js-close-popup">
+                                  <svg class="icon">
+                                    <use xlink:href="#back"></use>
+                                  </svg>
+                          </button>
+                        </div>
+                      </div>
                       <div class="action-popup__auth tp-text--center auth">
                         <div class="auth__heading tp-heading--medium">Авторизуйся для&nbsp;участия в&nbsp;конкурсе</div>
                         <div class="auth__list"><a class="auth__link auth__link--fb" href="#" title="Facebook">
@@ -65,14 +77,14 @@
                       </div>
                       <div class="action-popup__plug tp-text--center">
                         <div class="plug__heading tp-heading--medium">Подключи крутой тариф</div>
-                        <div class="plug__btn"><a class="btn btn--default-outline btn--large" href="#rates">Оставить заявку</a></div>
+                        <div class="plug__btn"><a class="btn btn--default-outline btn--large fp-link" href="#rates">Оставить заявку</a></div>
                       </div>
                     </div>
-                    <div class="section__popup content-popup code-popup" id="code-popup">
+                    <div class="section__popup popup content-popup code-popup" id="code-popup">
                       <div class="code tp-text--center">
                         <div class="code__img"><img src="build/img/black-gold.png"></div>
                         <div class="code__heading tp-heading--medium-2 glitch">Иван Крутой Победитель Иванов</div>
-                        <div class="code__desc tp-body--medium"><b>Поздравляемб Иван Иванов!</b><br/>Ты&nbsp;реально крутой, потому что выиграл год бесплатного интернета от&nbsp;МГТС.</div>
+                        <div class="code__desc tp-body--medium"><b>Поздравляем, Иван Иванов!</b><br/>Ты&nbsp;реально крутой, потому что выиграл год бесплатного интернета от&nbsp;МГТС.</div>
                         <div class="code__share">
                                 <div class="social social--inline">
                                   <div class="social__title">Расскажи всем:</div>
@@ -83,7 +95,7 @@
                         <div class="code__promocode">
                           <div class="js-copy-to-clipboard">WBA5553223</div>
                         </div>
-                        <div class="code__btn"><a class="btn btn--default-outline btn--large js-popup" href="#competition/order-popup">Получить приз</a></div>
+                        <div class="code__btn"><a class="btn btn--default-outline btn--large js-popup" href="#order-popup">Получить приз</a></div>
                       </div>
                     </div>
                   </div>
@@ -106,9 +118,7 @@
                               <div class="per">мес</div>
                             </div>
                           </div>
-                          <div class="rate-card__btn">
-                            <button class="btn btn--big btn--default-outline">Подключить</button>
-                          </div>
+                          <div class="rate-card__btn"><a class="btn btn--big btn--default-outline js-popup" href="#order-popup">Подключить</a></div>
                         </div>
                         <div class="rates__item rate-card">
                           <div class="rate-card__title tp-heading--medium">Тариф &laquo;Супер&nbsp;крутой&raquo;</div>
@@ -123,9 +133,7 @@
                               <div class="per">мес</div>
                             </div>
                           </div>
-                          <div class="rate-card__btn">
-                            <button class="btn btn--big btn--default-outline">Подключить</button>
-                          </div>
+                          <div class="rate-card__btn"><a class="btn btn--big btn--default-outline js-popup" href="#order-popup">Подключить</a></div>
                         </div>
                       </div>
                       <div class="section__note tp-body--small tp-text--upper">&laquo;Предложение действует с&nbsp;26.02.2019 по&nbsp;31.05.2019 для новых абонентов услуги &bdquo;Домашний Интернет&ldquo; или пакета услуг &bdquo;Домашний Интернет + Цифровое&nbsp;ТВ&ldquo; г. Москвы и&nbsp;Московской области при наличии технической возможности. Указанная стоимость пакета услуг &bdquo;Домашний Интернет + Цифровое&nbsp;ТВ&ldquo; действует с&nbsp;момента подключения по&nbsp;31.08.2019, далее она составит 675 руб./мес. Заявленная скорость интернета гарантируется при подключении через проводное соединение. Скорость по&nbsp;Wi-Fi зависит от&nbsp;количества и&nbsp;расположения клиентских устройств, а&nbsp;также от&nbsp;конфигурации помещения. Подробнее об&nbsp;организаторе и&nbsp;условиях акции&nbsp;&mdash; на&nbsp;mgts ru&nbsp;или по&nbsp;тел 8&nbsp;495 636-0-636&raquo;</div>
@@ -140,14 +148,20 @@
                       <div class="prizes__list">
                         <div class="prizes__item prize">
                           <div class="prize__img"><img src="build/img/router.png" title="Год интернета &lt;br/&gt;500&amp;nbsp;мбит/с бесплатно"></div>
-                          <div class="prize__title tp-body--big"><b>Год интернета <br/>500&nbsp;мбит/с бесплатно</b></div>
-                          <div class="prize__quan tp-body--big"><span>Количество&nbsp;</span><b>100шт</b></div>
+                          <div class="prixe__info">
+                            <div class="prize__title tp-body--big"><b>Год интернета <br/>500&nbsp;мбит/с бесплатно</b></div>
+                            <div class="prize__quan tp-body--big"><span>Количество&nbsp;</span><b>100шт</b></div>
+                          </div>
                         </div>
                         <div class="prizes__item prize">
                           <div class="prize__img"><img src="build/img/mask.png" title="Набор крутых масок от&lt;br/&gt;МГТС для твоих соцсетей"></div>
-                          <div class="prize__title tp-body--big"><b>Набор крутых масок от<br/>МГТС для твоих соцсетей</b></div>
-                          <div class="prize__quan tp-body--big"><span>Количество&nbsp;</span><b>не ограничено</b></div>
+                          <div class="prixe__info">
+                            <div class="prize__title tp-body--big"><b>Набор крутых масок от<br/>МГТС для твоих соцсетей</b></div>
+                            <div class="prize__quan tp-body--big"><span>Количество&nbsp;</span><b>не ограничено</b></div>
+                          </div>
                         </div>
+                      </div>
+                      <div class="prizes__documents prizes-doc l-hidden-sm-up"><a class="prizes-doc__link" href="#">Политика МГТС</a><a class="prizes-doc__link" href="#">Правила Конкурса</a>
                       </div>
                     </div>
                   </div>
@@ -662,7 +676,7 @@
                   </div>
           </div>
         </div>
-              <div class="modal modal--small" id="order-popup">
+              <div class="modal modal--small popup" id="order-popup">
                 <div class="modal__window">
                   <div class="modal__close btn-close-modal">
                           <svg class="icon icon--block">
@@ -709,7 +723,7 @@
                   </div>
                 </div>
               </div>
-        <div class="fullsize-popup" id="masks-popup">
+        <div class="fullsize-popup popup" id="masks-popup">
           <div class="masks section__main">
             <div class="section__content">
               <div class="section__img"><img src="build/img/black-gold.png"></div>
@@ -822,12 +836,45 @@
             </div>
           </div>
         </div>
-        <div class="fullpage-menu" id="fp-menu">
-          <div class="fullpage-menu__inner"><a class="fullpage-menu__link" href="#competition" data-menuanchor="competition">Конкурс</a><a class="fullpage-menu__link" href="#rates" data-menuanchor="rates">Тарифы</a><a class="fullpage-menu__link" href="#prizes" data-menuanchor="prizes">Призы</a><a class="fullpage-menu__link" href="#winners" data-menuanchor="winners">Победители</a>
+        <div class="main-menu">
+          <div class="main-menu__content">
+            <div class="main-menu__nav nav" id="main-menu">
+              <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link main-menu-fp-link" href="#competition" data-menuanchor="competition">Конкурс</a></li>
+                <li class="nav__item"><a class="nav__link main-menu-fp-link" href="#rates" data-menuanchor="rates">Тарифы</a></li>
+                <li class="nav__item"><a class="nav__link main-menu-fp-link" href="#prizes" data-menuanchor="prizes">Призы</a></li>
+                <li class="nav__item"><a class="nav__link main-menu-fp-link" href="#winners" data-menuanchor="winners">Победители</a></li>
+              </ul>
+            </div>
+            <div class="main-menu__tel"><a class="tel-link" href="telto:+74956360636">+7 495 636-0-636</a></div>
+            <div class="main-menu__docs docs">
+              <div class="docs__list">
+                <div class="docs__item"><a class="docs__link" href="#">Политика Безопасности МГТС</a></div>
+                <div class="docs__item"><a class="docs__link" href="#">Правила Конкурса</a></div>
+              </div>
+            </div>
+            <div class="main-menu__note">МГТС&nbsp;&mdash; самый быстрый в&nbsp;Москве по&nbsp;результатам теста скорости интернета Москвы Ооkla <a href='https://www.speedtest.net/' target='_blank'>speedtest.net</a> на&nbsp;1&#8209;й квартал 2018&nbsp;года.</div>
+            <div class="main-menu__socials socials">
+              <div class="socials__list"><a class="socials__link" href="#" title="Вконтакте">
+                        <svg class="icon">
+                          <use xlink:href="#vk"></use>
+                        </svg></a><a class="socials__link" href="#" title="Facebook">
+                        <svg class="icon">
+                          <use xlink:href="#fb"></use>
+                        </svg></a><a class="socials__link" href="#" title="Instagtam">
+                        <svg class="icon">
+                          <use xlink:href="#inst"></use>
+                        </svg></a>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="fullpage-nav" id="fp-nav">
-          <div class="fullpage-nav__inner"><a class="fullpage-nav__link" href="#competition" data-menuanchor="competition"></a><a class="fullpage-nav__link" href="#rates" data-menuanchor="rates"></a><a class="fullpage-nav__link" href="#prizes" data-menuanchor="prizes"></a><a class="fullpage-nav__link" href="#winners" data-menuanchor="winners"></a>
+        <div class="fullpage-menu l-hidden-sm-down" id="fp-menu">
+          <div class="fullpage-menu__inner"><a class="fullpage-menu__link fp-link" href="#competition" data-menuanchor="competition">Конкурс</a><a class="fullpage-menu__link fp-link" href="#rates" data-menuanchor="rates">Тарифы</a><a class="fullpage-menu__link fp-link" href="#prizes" data-menuanchor="prizes">Призы</a><a class="fullpage-menu__link fp-link" href="#winners" data-menuanchor="winners">Победители</a>
+          </div>
+        </div>
+        <div class="fullpage-nav l-hidden-sm-down" id="fp-nav">
+          <div class="fullpage-nav__inner"><a class="fullpage-nav__link fp-link" href="#competition" data-menuanchor="competition"></a><a class="fullpage-nav__link fp-link" href="#rates" data-menuanchor="rates"></a><a class="fullpage-nav__link fp-link" href="#prizes" data-menuanchor="prizes"></a><a class="fullpage-nav__link fp-link" href="#winners" data-menuanchor="winners"></a>
           </div>
         </div>
       </div>

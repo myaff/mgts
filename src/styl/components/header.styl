@@ -25,6 +25,9 @@
 				padding-left: 170px;
 				padding-right: 80px;
 			}
+			@media $display-breakpoints.sm-and-down {
+				padding: 0;
+			}
 		}
 	}
 
@@ -40,9 +43,17 @@
 		@media $display-breakpoints.md-and-down {
 			padding: 16px 20px;
 		}
-		@media $display-breakpoints.ms-and-down {
+		@media $display-breakpoints.sm-and-down {
 			padding: 10px;
 			background: transparent;
+			left: auto;
+			right: 0;
+
+			.popup-opened &,
+			.modal-opened & {
+				opacity: 0;
+				pointer-events: none;
+			}
 		}
 		
 		.icon {

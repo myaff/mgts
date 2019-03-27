@@ -8,6 +8,12 @@
 }
 .fp-tableCell {
   flexy(center, center);
+  @media $display-breakpoints.md-and-up {
+    overflow: hidden;
+  }
+  @media $display-breakpoints.sm-and-down {
+    height: auto!important;
+  }
 }
 .fullpage-menu {
   fixed(0px, 0px);

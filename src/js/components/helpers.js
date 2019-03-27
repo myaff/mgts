@@ -125,31 +125,8 @@ function toggleElementClassOnScroll(el, scrollValue = 0, toggledClass = 'scrolle
 	});
 };
 
-/* Modals */
-function openModal(modal) {
-  if (modal) {
-    let win = modal.find('.modal__window');
-    modal.fadeIn(500);
-    $('html, body').css('overflow-y', 'hidden');
-    $('html').addClass('modal-opened');
-    win.fadeIn(500);
-    modal.trigger('modalopened');
-  } else {
-    console.error('Which modal?');
-  }
-}
-
-function closeModal(modal) {
-  if (modal) {
-    let win = modal.find('.modal__window');
-    win.fadeOut(500);
-    modal.fadeOut(500);
-    $('html').removeClass('modal-opened');
-    $('html, body').css('overflow-y', '');
-    modal.trigger('modalclosed')
-  } else {
-    console.error('Which modal?');
-  }
+function removeHash () { 
+  history.pushState("", document.title, window.location.pathname + window.location.search);
 }
 
 function setScrollpad(els) {
@@ -162,22 +139,18 @@ function setScrollpad(els) {
 
 /* Menu */
 function showMenu() {
+  $('.btn-menu').addClass('opened');
   $('.main-menu').addClass('is-open');
-  $('body').addClass('menu-is-open');
-  if ($('.layout').outerHeight() > window.outerHeight) {
-    $('.header').css({'right': getNativeScrollbarWidth() + 'px'});
-    $('html, body').css('overflow-y', 'hidden');
-  }
+  $('body').addClass('menu-opened');
+  $('html, body').css('overflow', 'hidden');
   $('.main-menu').fadeIn(500);
 }
 function hideMenu() {
   $('.main-menu').fadeOut(500);
   $('.main-menu').removeClass('is-open');
-  $('body').removeClass('menu-is-open');
-  if ($('.layout').outerHeight() > window.outerHeight) {
-    $('.header').css({'right': '0px'});
-    $('html, body').css('overflow-y', '');
-  }
+  $('body').removeClass('menu-opened');
+  $('.btn-menu').removeClass('opened');
+  $('html, body').css('overflow', 'visible');
 }
 
 
@@ -199,25 +172,6 @@ function init(){
     }
   });
 
-  $('.btn-close-modal').on('click', function(){
-    let modal = !!$(this).data('target') ? $($(this).data('target')) : $(this).closest('.modal');
-    closeModal(modal);
-  });
-
-  $('.modal').on('click', function() {
-    closeModal($(this));
-  });
-
-  $('.modal__window').on('click', function(e) {
-    e.stopPropagation();
-  });
-
-  $('.btn-modal').on('click', function(e) {
-    let target = $(this).data('target') === 'self' ? $(this).parent() : $($(this).data('target'));
-    e.preventDefault();
-    openModal(target);
-  });
-
   
   $(window).on('resize', function () {
     timer = new Date();
@@ -230,18 +184,18 @@ function init(){
   
   $('.btn-menu').on('click', function(e){
     e.preventDefault();
-    showMenu();
-  });
-  $('.btn-close-menu').on('click', function(e){
-    e.preventDefault();
-    hideMenu();
-  });
-  $(window).on('resizeend', function(){
-    if (Main.DeviceDetection.isMobile()) {
+    if ($(this).hasClass('opened')) {
       hideMenu();
     } else {
       showMenu();
     }
+  });
+  $('.main-menu-fp-link').on('click', function() {
+    hideMenu();
+  })
+  $('.btn-close-menu').on('click', function(e){
+    e.preventDefault();
+    hideMenu();
   });
 
   if (Main.DeviceDetection.isPortrait()) {
@@ -280,8 +234,7 @@ module.exports = {
   toggleClassIf, 
   toggleElementClassOnScroll, 
   addScript, 
-  openModal, 
-  closeModal,
   showMenu,
-  hideMenu
+  hideMenu,
+  removeHash
 };

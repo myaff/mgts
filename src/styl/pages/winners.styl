@@ -7,11 +7,17 @@
   @media $display-breakpoints.md-and-down {
     padding: 60px 0 80px;
   }
+  @media $display-breakpoints.sm-and-down {
+    padding: vmin(20) 0 0;
+  }
   .section {
     &__content {
       max-size(1000px, 100%);
       flexy(flex-start, center);
       flex-direction: column;
+      @media $display-breakpoints.sm-and-down {
+        padding: 0;
+      }
     }
     &__heading {
       flex: 0 0 auto;
@@ -43,8 +49,23 @@
   }
   &__head {
     flex: 0 0 auto;
+    font: 400 18px $font-base;
+    letter-spacing: 0.05em;
     width: 100%;
     background: linear-gradient(12.59deg, #2F2E66 5.29%, rgba(47, 46, 102, 0) 73.41%), radial-gradient(151.52px at 87.01% 116.58%, #9D13C0 0%, rgba(123, 16, 169, 0) 100%), linear-gradient(177.94deg, #00B2F3 -19.13%, rgba(47, 46, 103, 0) 47.97%), #48469D;
+
+    @media $display-breakpoints.sm-and-down {
+      font-size: vmin(16, 320);
+    }
+
+    .icon {
+      opacity: 0.3;
+      font-size: 12px;
+
+      @media $display-breakpoints.sm-and-down {
+        font-size: vmin(12, 320);
+      }
+    }
   }
   &__body {
     flex: 0 1 auto;
@@ -53,10 +74,20 @@
     min-height: 0;
     overflow: hidden;
     background: #052540;
+
+    @media $display-breakpoints.sm-and-down {
+      height: vmin(360, 320);
+      max-height: initial;
+    }
   }
   &__col {
     &:first-child {
       flex: 0 0 29%;
+
+      @media $display-breakpoints.sm-and-down {
+        order: 2;
+        flex: 0 0 vmin(50, 320);
+      }
     }
     &:last-child {
       flex: 1 1 auto;
@@ -71,6 +102,14 @@
     @media $display-breakpoints.md-and-down {
       padding: 18px 30px;
     }
+    @media $display-breakpoints.sm-and-down {
+      padding: vmin(15, 320) vmin(20, 320);
+
+      &:first-child {
+        flex-basis: vmin(60, 320);
+        padding-left: 0;
+      }
+    }
   }
   &__body &__col {
     padding: 15px 40px;
@@ -80,6 +119,13 @@
     }
     @media $display-breakpoints.md-and-down {
       padding: 18px 30px;
+    }
+    @media $display-breakpoints.sm-and-down {
+      padding: vmin(15, 320) vmin(20, 320);
+
+      &:last-child {
+        padding-right: 0;
+      }
     }
   }
   &__body &__row {
@@ -103,6 +149,11 @@
       size(30px);
       flex-basis: 30px;
     }
+    @media $display-breakpoints.sm-and-down {
+      flex-basis: vmin(30, 320);
+      size(vmin(30, 320));
+      margin-right: vmin(10, 320);
+    }
 
     img {
       display: block;
@@ -112,6 +163,13 @@
 
   &__name {
     flex: 1 1 auto;
-    letter-spacing: 0.05em;
+
+    .tp-body--base {
+      letter-spacing: 0.05em;
+
+      @media $display-breakpoints.sm-and-down {
+        font-size: vmin(12, 320);
+      }
+    }
   }
 }

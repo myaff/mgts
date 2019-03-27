@@ -1,0 +1,20 @@
+.main-menu
+  .main-menu__content
+    #main-menu.main-menu__nav.nav
+      ul.nav__list
+        for item, key in content.sections
+          li.nav__item
+            a.nav__link.main-menu-fp-link(href="#" + key, data-menuanchor=key) !{item.title}
+    .main-menu__tel
+      a.tel-link(href=company.tel.value) !{company.tel.title}
+    .main-menu__docs.docs
+      .docs__list
+        for item in company.documents
+          .docs__item
+            a.docs__link(href=item.url) !{item.title}
+    .main-menu__note !{company.note}
+    .main-menu__socials.socials
+      .socials__list
+        for item in company.socials
+          a.socials__link(href=item.url, title=item.title)
+            +icon(item.icon)

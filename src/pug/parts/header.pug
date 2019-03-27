@@ -5,15 +5,13 @@ include ../mixins
       a.header__logo.header__logo--main(href=company.logo.url)
         +icon('logo-mgts')
         .text !{company.logo.text}
-      .header__menu.l-hidden
+      .header__menu.l-hidden-md-up
         .btn-menu
-          div
-          div
-          div
-        //- +navMenu(menu)
-      .header__tel
+          +icon('burger').open
+          +icon('cross').close
+      .header__tel.l-hidden-sm-down
         a.tel-link(href=company.tel.value)
           +icon('phone')
           b.text.tp-text--big !{company.tel.title}
-      .header__btn
-        a.btn.btn--primary(href="#rates") подключить крутой тариф
+      .header__btn.l-hidden-sm-down
+        a.btn.btn--primary.fp-link(href="#rates", data-menuanchor="rates") подключить крутой тариф

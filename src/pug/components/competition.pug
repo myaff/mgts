@@ -6,7 +6,11 @@
     .section__text.tp-body--big !{sec.desc}
     .section__btn
       a.btn.btn--large.btn--default-outline.js-popup(href=sec.btn.url) !{sec.btn.title}
-  #action-popup.section__popup.content-popup.action-popup
+  #action-popup.section__popup.popup.content-popup.action-popup
+    .action-popup__header.l-hidden-md-up
+      .action-popup__close
+        button.btn.btn--plain.btn--square.js-close-popup
+          +icon('back')
     .action-popup__auth.tp-text--center.auth
       .auth__heading.tp-heading--medium !{sec.actions.auth.heading}
       .auth__list
@@ -16,8 +20,8 @@
     .action-popup__plug.tp-text--center
       .plug__heading.tp-heading--medium !{sec.actions.plug.heading}
       .plug__btn
-        a.btn.btn--default-outline.btn--large(href=sec.actions.plug.link.url) !{sec.actions.plug.link.title}
-  #code-popup.section__popup.content-popup.code-popup
+        a.btn.btn--default-outline.btn--large.fp-link(href=sec.actions.plug.link.url) !{sec.actions.plug.link.title}
+  #code-popup.section__popup.popup.content-popup.code-popup
     .code.tp-text--center
       .code__img: img(src=content.code.img)
       .code__heading.tp-heading--medium-2.glitch !{content.code.heading}

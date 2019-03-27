@@ -4,9 +4,16 @@
   z-index: 9;
   display: none;
   overflow-y: auto;
+
+  @media $display-breakpoints.sm-and-down {
+    background: $white;
+  }
+
   .layout & {
     size(100%, 100vh);
-    absolute();
+    @media $display-breakpoints.md-and-up {
+      absolute();
+    }
   }
 
   &__window {
@@ -19,8 +26,16 @@
     border-radius: 33px;
     display: none;
 
+    @media $display-breakpoints.sm-and-down {
+      border-radius: 0;
+    }
+
     ^[0]--small & {
       max-width: 620px;
+
+      @media $display-breakpoints.sm-and-down {
+        max-width: 100vw;
+      }
     }
   }
 
@@ -32,6 +47,13 @@
     padding: 12px;
     color: #062B4B;
     cursor: pointer;
+
+    @media $display-breakpoints.sm-and-down {
+      top: 0;
+      right: 0;
+      size(vmin(60, 320));
+      padding: vmin(20, 320);
+    }
   }
 
   &__inner {
@@ -43,6 +65,9 @@
     padding: 40px 60px 60px;
     @media $display-breakpoints.md-and-down {
       padding: 40px 60px;
+    }
+    @media $display-breakpoints.sm-and-down {
+      padding: vmin(60, 320) vmin(20, 320) vmin(40, 320);
     }
     ^[0]--video & {
       padding: 0;

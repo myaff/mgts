@@ -59,6 +59,9 @@ a {
     @media $display-breakpoints.md-and-down {
       font-size: 32px;
     }
+    @media $display-breakpoints.sm-and-down {
+      font-size: vmin(20, 320);
+    }
   }
   &--big {
     font: bold 42px $font-base;
@@ -90,6 +93,9 @@ a {
     }
     @media $display-breakpoints.md-and-down {
       font-size: 16px;
+    }
+    @media $display-breakpoints.sm-and-down {
+      font-size: vmin(16, 320);
     }
   }
   &--small {
@@ -133,16 +139,10 @@ a {
     }
 
     @media $display-breakpoints.md-and-down {
-      font-size: 18px;
+      font-size: vw(18, 1024);
     }
     @media $display-breakpoints.sm-and-down {
-      font-size: 16px;
-    }
-    @media $msWidthLand {
-      font-size: 2.6vh;
-    }
-    @media $msWidthPort {
-      font-size: 14px;
+      font-size: vmin(14, 320);
     }
   }
   &--medium {
@@ -173,6 +173,10 @@ a {
     }
     @media $display-breakpoints.md-and-down {
       font-size: 11px;
+    }
+    @media $display-breakpoints.sm-and-down {
+      font-size: vmin(9, 320);
+      line-height: 1.67;
     }
   }
   &--smaller {

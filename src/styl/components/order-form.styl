@@ -3,18 +3,34 @@
 
   &__heading {
     margin-bottom: 20px;
+
+    @media $display-breakpoints.sm-and-down {
+      font-size: vmin(24, 320);
+      margin-bottom: vmin(10, 320);
+    }
   }
   &__desc {
     max-width: 500px;
     margin: 20px auto;
     font: 16px $font-base;
     letter-spacing: 0.03em;
+
+    @media $display-breakpoints.sm-and-down {
+      font-size: vmin(14, 320);
+      max-width: 100%;
+    }
   }
   &__note {
     max-width: 520px;
     margin: 20px auto 34px;
     color: #808F9C;
     font: 14px $font-base;
+
+    @media $display-breakpoints.sm-and-down {
+      font-size: vmin(12, 320);
+      margin: vmin(20, 320) auto vmin(30, 320);
+      max-width: 100%;
+    }
 
     a {
       color: $primary;
@@ -27,6 +43,13 @@
         line-height: 18px;
         padding: 1em;
         width: 200px;
+      }
+      @media $display-breakpoints.sm-and-down {
+        font-size: vmin(16, 320);
+        line-height: vmin(18, 320);
+        padding: 1em;
+        width: vmin(200, 320);
+        border-radius: 3em;
       }
     }
   }

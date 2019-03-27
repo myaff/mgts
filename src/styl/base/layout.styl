@@ -39,6 +39,7 @@ body {
   width: 100vw;
   background: linear-gradient(270deg, #062B4B 6.54%, #062B4B 6.54%, rgba(6, 43, 75, 0.00552486) 27.43%, rgba(255, 255, 255, 0) 27.44%), linear-gradient(90deg, #062B4B 7.48%, rgba(6, 43, 75, 0) 24.16%), radial-gradient(1327.63px at 100% 3.47%, #01182A 0%, rgba(1, 24, 42, 0) 100%), #02213A;
   color: $white;
+  overflow-x: hidden;
 
   .page {
     min-height: 100%;
@@ -58,6 +59,12 @@ body {
 
     @media $display-breakpoints.md-and-down {
       width: calc(100% - 160px);
+    }
+
+    @media $display-breakpoints.sm-and-down {
+      width: 100%;
+      background: url('../img/lines-sm.png') top center repeat-y;
+      background-size: 100% auto;
     }
   }
 

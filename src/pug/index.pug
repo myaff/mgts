@@ -13,15 +13,16 @@ block content
 			for item, key in content.sections
 				.section(data-anchor=key, id=key + "-id")
 					+dyn(key)
-		+modal('order-popup').modal--small
+		+modal('order-popup').modal--small.popup
 			include components/order-form
-		#masks-popup.fullsize-popup
+		#masks-popup.fullsize-popup.popup
 			include components/masks
-		#fp-menu.fullpage-menu
+		include components/main-menu
+		#fp-menu.fullpage-menu.l-hidden-sm-down
 			.fullpage-menu__inner
 				for item, key in content.sections
-					a.fullpage-menu__link(href="#" + key, data-menuanchor=key) !{item.title}
-		#fp-nav.fullpage-nav
+					a.fullpage-menu__link.fp-link(href="#" + key, data-menuanchor=key) !{item.title}
+		#fp-nav.fullpage-nav.l-hidden-sm-down
 			.fullpage-nav__inner
 				for item, key in content.sections
-					a.fullpage-nav__link(href="#" + key, data-menuanchor=key)
+					a.fullpage-nav__link.fp-link(href="#" + key, data-menuanchor=key)
