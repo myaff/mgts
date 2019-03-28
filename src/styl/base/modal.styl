@@ -16,13 +16,26 @@
     }
   }
 
+  .mCustomScrollbar {
+    height: 100%;
+  }
+
+  &__outer {
+    padding: vmin(100, 950) 0;
+    flexy(center, center)
+
+    @media $display-breakpoints.sm-and-down {
+      padding: 0;
+    }
+  }
+
   &__window {
     width: 100%;
     max-width: 950px;
     background: $white;
-    absolute(50%, 50%);
-    transform: translate(-50%, -50%);
-    max-height: 100vh;
+    //absolute(50%, 50%);
+    //transform: translate(-50%, -50%);
+    //max-height: 100vh;
     border-radius: 33px;
     display: none;
 

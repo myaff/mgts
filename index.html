@@ -66,10 +66,10 @@
                       </div>
                       <div class="action-popup__auth tp-text--center auth">
                         <div class="auth__heading tp-heading--medium">Авторизуйся для&nbsp;участия в&nbsp;конкурсе</div>
-                        <div class="auth__list"><a class="auth__link auth__link--fb" href="#" title="Facebook">
+                        <div class="auth__list"><a class="auth__link js-popup auth__link--fb" href="#code-popup" title="Facebook">
                                   <svg class="icon">
                                     <use xlink:href="#fb"></use>
-                                  </svg></a><a class="auth__link auth__link--vk" href="#" title="Вконтакте">
+                                  </svg></a><a class="auth__link js-popup auth__link--vk" href="#masks-popup" title="Вконтакте">
                                   <svg class="icon">
                                     <use xlink:href="#vk"></use>
                                   </svg></a>
@@ -677,46 +677,50 @@
           </div>
         </div>
               <div class="modal modal--small popup" id="order-popup">
-                <div class="modal__window">
-                  <div class="modal__close btn-close-modal">
-                          <svg class="icon icon--block">
-                            <use xlink:href="#cross"></use>
-                          </svg>
-                  </div>
-                  <div class="modal__inner">
-                    <div class="modal__content">
-                      <div class="order-form tp-text--center">
-                        <div class="order-form__heading tp-heading--medium glitch">Заявка на&nbsp;подключение</div>
-                        <div class="order-form__desc">Оставьте свои контактные данные, чтобы мы&nbsp;могли уточнить детали подключения: мы&nbsp;свяжемся с&nbsp;Вами в&nbsp;ближайшее время.</div>
-                        <div class="order-form__fields">
-                                <div class="field form__field field--required">
-                                  <div class="field__label-text">ПРОМОКОД</div>
-                                  <label class="field__label" for="of-code">
-                                    <input class="field__input" id="of-code" type="text" required>
-                                  </label>
-                                </div>
-                                <div class="field form__field field--required">
-                                  <div class="field__label-text">ФИО</div>
-                                  <label class="field__label" for="of-name">
-                                    <input class="field__input" id="of-name" type="text" required>
-                                  </label>
-                                </div>
-                                <div class="field form__field field--required">
-                                  <div class="field__label-text">Мобильный номер</div>
-                                  <label class="field__label" for="of-tel">
-                                    <input class="field__input" id="of-tel" type="tel" required>
-                                  </label>
-                                </div>
-                                <div class="field form__field">
-                                  <div class="field__label-text">Электронная почта</div>
-                                  <label class="field__label" for="of-email">
-                                    <input class="field__input" id="of-email" type="email">
-                                  </label>
-                                </div>
-                        </div>
-                        <div class="order-form__note tp-text--left">Отправляя заявку на&nbsp;подключение услуг, я&nbsp;соглашаюсь: на&nbsp;обработку своих данных, указанных в&nbsp;заявке с&nbsp;целью информирования по&nbsp;услугам ПАО МГТС, заключения договора и&nbsp;с&nbsp;<a href='#'>Правилами Конкурса</a></div>
-                        <div class="order-form__btn">
-                          <button class="btn btn--primary btn--large">Отправить</button>
+                <div class="mCustomScrollbar">
+                  <div class="modal__outer">
+                    <div class="modal__window">
+                      <div class="modal__close btn-close-modal">
+                              <svg class="icon icon--block">
+                                <use xlink:href="#cross"></use>
+                              </svg>
+                      </div>
+                      <div class="modal__inner">
+                        <div class="modal__content">
+                          <div class="order-form tp-text--center">
+                            <div class="order-form__heading tp-heading--medium glitch">Заявка на&nbsp;подключение</div>
+                            <div class="order-form__desc">Оставьте свои контактные данные, чтобы мы&nbsp;могли уточнить детали подключения: мы&nbsp;свяжемся с&nbsp;Вами в&nbsp;ближайшее время.</div>
+                            <div class="order-form__fields">
+                                    <div class="field form__field field--required">
+                                      <div class="field__label-text">ПРОМОКОД</div>
+                                      <label class="field__label" for="of-code">
+                                        <input class="field__input" id="of-code" type="text" required>
+                                      </label>
+                                    </div>
+                                    <div class="field form__field field--required">
+                                      <div class="field__label-text">ФИО</div>
+                                      <label class="field__label" for="of-name">
+                                        <input class="field__input" id="of-name" type="text" required>
+                                      </label>
+                                    </div>
+                                    <div class="field form__field field--required">
+                                      <div class="field__label-text">Мобильный номер</div>
+                                      <label class="field__label" for="of-tel">
+                                        <input class="field__input" id="of-tel" type="tel" required>
+                                      </label>
+                                    </div>
+                                    <div class="field form__field">
+                                      <div class="field__label-text">Электронная почта</div>
+                                      <label class="field__label" for="of-email">
+                                        <input class="field__input" id="of-email" type="email">
+                                      </label>
+                                    </div>
+                            </div>
+                            <div class="order-form__note tp-text--left">Отправляя заявку на&nbsp;подключение услуг, я&nbsp;соглашаюсь: на&nbsp;обработку своих данных, указанных в&nbsp;заявке с&nbsp;целью информирования по&nbsp;услугам ПАО МГТС, заключения договора и&nbsp;с&nbsp;<a href='#'>Правилами Конкурса</a></div>
+                            <div class="order-form__btn">
+                              <button class="btn btn--primary btn--large">Отправить</button>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>

@@ -69,6 +69,9 @@
         width: 100%;
       }
     }
+    &__text {
+      margin-bottom: vmin(40, 950);
+    }
   }
 }
 
@@ -81,17 +84,25 @@
   }
 
   &__img {
+    flexy(center);
     max-width: 100%;
-    margin: 0 auto 68px;
+    height: vmin(313, 950)
+    margin: 0 auto vmin(40, 950);
 
+    @media $display-breakpoints.md-and-down {
+      margin-bottom: vmin(20, 320);
+    }
     @media $display-breakpoints.sm-and-down {
       margin-bottom: vmin(20, 320);
+      height: vmin(130, 320);
     }
 
     img {
       display: block;
-      width: 100%;
-      margin: 0 auto;
+      max-size(100%);
+      size(auto);
+      object-fit: contain;
+      margin: auto;
       transform: scale(0.78);
       transform-origin: center;
       transition: transform 0.5s;
@@ -106,7 +117,7 @@
     flexy(center, center);
   }
   &__link {
-    flex: 0 0 64px;
+    flex: 0 0 vmin(64, 950);
     color: $white;
     relative();
     margin: 0 7px;
@@ -124,19 +135,22 @@
   }
 
   &__icon {
-    circle(64px);
+    circle(vmin(64, 950));
     flexy(center, center);
     border: 2px solid $white;
-    padding: 16px;
+    padding: vmin(16, 950);
     transition: all 0.3s;
     background url('../img/circle-gradient.svg') center no-repeat;
+    background-size: vmin(64, 950);
 
     @media $display-breakpoints.md-and-down {
       size(50px);
+      background-size: 50px;
     }
     @media $display-breakpoints.sm-and-down {
       size(vmin(30, 320));
-      padding: vmin(4, 320);
+      padding: vmin(8, 320);
+      background-size: vmin(30, 320);
     }
 
     ^[0]__link:hover & {

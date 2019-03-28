@@ -33,7 +33,9 @@ function closePopup (id) {
     popup.fadeOut(500);
     $('html').removeClass('modal-opened');
   }
-  $('html, body').css('overflow', 'visible');
+  if (Main.DeviceDetection.isMobile()) {
+    $('html, body').css('overflow', 'visible');
+  }
 }
 function closeAllPopups () {
   $('.content-popup, fullsize-popup').removeClass('active');
@@ -73,13 +75,6 @@ function closeModal(modal) {
 
 function init () {
 
-  let hash = (window.location.hash && (window.location.hash.length > 1)) ? window.location.hash : null;
-
-  if (hash && $(hash).hasClass('popup')) {
-    openPopup(hash);
-    Main.Helpers.removeHash();
-  }
-
   $('.js-popup').on('click', function(e) {
     e.preventDefault();
     let target = $(this).attr('href');
@@ -100,7 +95,7 @@ function init () {
     closeModal($(this));
   });
 
-  $('.modal__window').on('click', function(e) {
+  $('.modal__window, .modal .mCSB_scrollTools').on('click', function(e) {
     e.stopPropagation();
   });
 

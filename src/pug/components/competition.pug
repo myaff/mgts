@@ -15,7 +15,7 @@
       .auth__heading.tp-heading--medium !{sec.actions.auth.heading}
       .auth__list
         for item in sec.actions.auth.list
-          a.auth__link(href=item.url, class="auth__link--" + item.key, title=item.title)
+          a.auth__link.js-popup(href=item.url, class="auth__link--" + item.key, title=item.title)
             +icon(item.icon)
     .action-popup__plug.tp-text--center
       .plug__heading.tp-heading--medium !{sec.actions.plug.heading}

@@ -49,12 +49,14 @@ mixin carousel(items)
 
 mixin modal(modalID)
 	div&attributes(attributes).modal(id=modalID)
-		.modal__window
-			.modal__close.btn-close-modal
-				+icon("cross").icon--block
-			.modal__inner
-				.modal__content
-					block
+		.mCustomScrollbar
+			.modal__outer
+				.modal__window
+					.modal__close.btn-close-modal
+						+icon("cross").icon--block
+					.modal__inner
+						.modal__content
+							block
 
 mixin dyn(sect)
 	if sect == 'competition'

@@ -97,13 +97,13 @@
 								"title": "Facebook",
 								"key": "fb",
 								"icon": "fb",
-								"url": "#"
+								"url": "#code-popup"
 							},
 							{
 								"title": "Вконтакте",
 								"key": "vk",
 								"icon": "vk",
-								"url": "#"
+								"url": "#masks-popup"
 							}
 						]
 					},
