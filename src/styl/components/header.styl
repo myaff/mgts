@@ -11,19 +11,17 @@
 
 	&__content {
 		flexy(space-between, center);
-		padding: 20px 0;
+		padding: 30px 0;
 
 		.layout--home & {
 			padding-left: 230px;
 			padding-right: 100px;
 
 			@media $display-breakpoints.lg-and-down {
-				padding-left: vw(230);
-				padding-right: vw(100);
+				padding: vw(30) vw(100) vw(30) vw(230);
 			}
 			@media $display-breakpoints.md-and-down {
-				padding-left: 170px;
-				padding-right: 80px;
+				padding: vw(14, 1024) vw(80, 1024) vw(14, 1024) vw(170, 1024);
 			}
 			@media $display-breakpoints.sm-and-down {
 				padding: 0;
@@ -33,18 +31,18 @@
 
 	&__logo {
 		fixed(0px, 0px);
-		padding: 17px 25px;
+		padding: 27px 25px;
 		background: $primary;
 		color: $white;
 
 		@media $display-breakpoints.lg-and-down {
-			padding: vw(17) vw(25);
+			padding: vw(27) vw(25);
 		}
 		@media $display-breakpoints.md-and-down {
-			padding: 16px 20px;
+			padding: vw(16, 1024) 20px;
 		}
 		@media $display-breakpoints.sm-and-down {
-			padding: 10px;
+			padding: vmin(20, 320);
 			background: transparent;
 			left: auto;
 			right: 0;
@@ -57,16 +55,16 @@
 		}
 		
 		.icon {
-			size(172px, 56px);
+			size(172px, 50px);
 
 			@media $display-breakpoints.lg-and-down {
-				size(vw(172), vw(56));
+				size(vw(172), vw(50));
 			}
 			@media $display-breakpoints.md-and-down {
-				size(140px, 40px);
+				size(vw(140, 1024), vw(40, 1024));
 			}
-			@media $display-breakpoints.ms-and-down {
-				size(74px, 23px);
+			@media $display-breakpoints.sm-and-down {
+				size(vmin(74, 320), vmin(23, 320));
 			}
 		}
 
@@ -82,8 +80,23 @@
 			@media $display-breakpoints.md-and-down {
 				font-size: 11px;
 			}
-			@media $display-breakpoints.ms-and-down {
+			@media $display-breakpoints.sm-and-down {
 				display: none;
+			}
+		}
+	}
+
+	&__btn {
+		.btn {
+			@media $display-breakpoints.lg-and-down {
+				font-size: vw(14);
+				line-height: vw(16);
+				padding: vw(12) vw(20);
+			}
+			@media $display-breakpoints.md-and-down {
+				font-size: vw(14, 1024);
+				line-height: vw(16, 1024);
+				padding: vw(12, 1024) vw(20, 1024);
 			}
 		}
 	}
@@ -92,6 +105,14 @@
 	&__tel {
 		.text {
 			margin-left: 0.25em;
+			line-height: 1.2;
+
+			@media $display-breakpoints.lg-and-down {
+				font-size: vw(21);
+			}
+			@media $display-breakpoints.md-and-down {
+				font-size: vw(21, 1024);
+			}
 		}
 	}
 
