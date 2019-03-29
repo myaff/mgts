@@ -198,18 +198,20 @@
   &__link {
     relative();
     display: block;
+    font-size: 32px;
     line-height: 1;
-    flex: 0 0 64px;
-    circle(64px);
-    padding: 16px;
-    margin: 0 7px;
+    flex: 0 0 2em;
+    circle(2em);
+    padding: 0.5em;
+    margin: 0 0.5em;
     box-sizing: border-box;
     color: $white;
 
     @media $display-breakpoints.sm-and-down {
-      flex: 0 0 vmin(50, 320);
-      size(vmin(50, 320));
-      padding: vmin(15, 320);
+      font-size: vmin(20, 320);
+      flex-basis: 2.5em;
+      size(2.5em);
+      padding: 0.75em;
     }
 
     {hover-focus-active} {
@@ -218,7 +220,7 @@
 
     .icon {
       display: block;
-      size(100%);
+      size(1em);
     }
 
     &--fb {
