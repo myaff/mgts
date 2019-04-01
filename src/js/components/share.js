@@ -20,27 +20,29 @@ function fillIcons() {
   });
 }
 function init() {
-  let services = $('#share').data('services');
-  let ogTitle = document.querySelector("meta[property='og:title']").getAttribute('content');
-  let ogDescription = document.querySelector("meta[property='og:description']").getAttribute('content');
-  let ogImage = document.querySelector("meta[property='og:image']").getAttribute('content');
-  Ya.share2('share', {
-    content: {
-      url: window.location.href,
-      title: ogTitle,
-      description: ogDescription,
-      image: ogImage
-    },
-    theme: {
-      services: services,
-      bare: true,
-      lang: 'ru'
-    },
-    hooks: {
-      onready: function() {
-        fillIcons();
+  if ($('#share')) {
+    let services = $('#share').data('services');
+    let ogTitle = document.querySelector("meta[property='og:title']").getAttribute('content');
+    let ogDescription = document.querySelector("meta[property='og:description']").getAttribute('content');
+    let ogImage = document.querySelector("meta[property='og:image']").getAttribute('content');
+    Ya.share2('share', {
+      content: {
+        url: window.location.href,
+        title: ogTitle,
+        description: ogDescription,
+        image: ogImage
+      },
+      theme: {
+        services: services,
+        bare: true,
+        lang: 'ru'
+      },
+      hooks: {
+        onready: function() {
+          fillIcons();
+        }
       }
-    }
-  });
+    });
+  }
 }
 module.exports = {init};

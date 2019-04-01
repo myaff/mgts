@@ -26,6 +26,8 @@
   }
   &__item {
     flex: 0 0 20%;
+    // ie11 fix
+    max-width: 20%;
 
     @media $display-breakpoints.md-and-up {
       &:nth-child(6) {
@@ -33,7 +35,8 @@
       }
     }
     @media $display-breakpoints.sm-and-down {
-      flex: 0 0 50%;
+      flex: 0 0 100%;
+      max-width: 100%;
     }
   }
 
@@ -86,7 +89,7 @@
   &__img {
     flexy(center);
     max-width: 100%;
-    height: vmin(313, 950)
+    //height: vmin(313, 950)
     margin: 0 auto vmin(40, 950);
 
     @media $display-breakpoints.md-and-down {
@@ -94,14 +97,12 @@
     }
     @media $display-breakpoints.sm-and-down {
       margin-bottom: vmin(20, 320);
-      height: vmin(130, 320);
+      //size(100%, auto);
     }
 
     img {
       display: block;
-      max-size(100%);
-      size(auto);
-      object-fit: contain;
+      size(100%, auto);
       margin: auto;
       transform: scale(0.78);
       transform-origin: center;

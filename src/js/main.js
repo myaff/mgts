@@ -13,7 +13,7 @@ $(document).ready(function(){
 
   DeviceDetection.run();
   Helpers.init();
-  Share.init();
+  //Share.init();
   //Carousel.init();
   Timer.init();
   Scrollbar.init();

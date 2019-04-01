@@ -3,14 +3,14 @@
   .section__content
     .section__heading.tp-heading--large.glitch.tp-text--center !{sec.heading}
     .section__text.tp-body--big.tp-text--center !{sec.desc}
-    .winners__list
+    .winners__list.ie-unclear-height
       .winners-table
         .winners-table__head
           for item in sec.list.cols
             .winners-table__col
               span.text !{item}
               +icon('arrow-down')
-        .winners-table__body.mCustomScrollbar
+        .winners-table__body.custom-scroll
           .winners-table__content
             for item, index in sec.list.ls
               .winners-table__row(class="winners-table__row--" + (index + 1))

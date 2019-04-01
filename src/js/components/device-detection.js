@@ -29,6 +29,9 @@ function isTouch(){
 function isMobileVersion(){
   return !!~window.location.href.indexOf("/mobile/");
 }
+function isIE11() {
+  return !!window.MSInputMethodContext && !!document.documentMode;
+}
 
 function run(){
   if(isTouch()){
@@ -47,5 +50,6 @@ module.exports = {
   isDesktopExt,
   isMobileVersion,
   isPortrait,
-  isLandscape
+  isLandscape,
+  isIE11
 };

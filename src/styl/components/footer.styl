@@ -15,7 +15,7 @@
     padding: 24px 80px;
   }
   @media $display-breakpoints.sm-and-down {
-    display: none;
+    padding: vmin(16, 320) vmin(20, 320);
   }
 
   .fp-viewing-winners & {
@@ -32,6 +32,10 @@
 
   &__content {
     flexy(space-between, center);
+
+    @media $display-breakpoints.sm-and-down {
+      display: block;
+    }
   }
 
   &__note {
@@ -43,6 +47,9 @@
     @media $display-breakpoints.md-and-down {
       flex-basis: 350px;
       margin-right: 32px;
+    }
+    @media $display-breakpoints.sm-and-down {
+      font-size: vmin(12, 320);
     }
 
     a {
@@ -57,6 +64,10 @@
 
     @media $display-breakpoints.lg-and-down {
       flex: 0 1 vw(450);
+    }
+    @media $display-breakpoints.sm-and-down {
+      justify-content: flex-start;
+      margin: vmin(10, 320) 0 0;
     }
 
     .social {
@@ -79,6 +90,11 @@
         padding: 6px;
         margin-left: 10px;
       }
+      @media $display-breakpoints.sm-and-down {
+        &:first-child {
+          margin-left: 0;
+        }
+      }
 
       .icon {
         display: block;
@@ -94,6 +110,9 @@
       flex-wrap: wrap;
       justify-content: flex-start;
     }
+    @media $display-breakpoints.sm-and-down {
+      display: block;
+    }
 
     .document {
       font-weight: bold;
@@ -107,6 +126,11 @@
       }
       @media $display-breakpoints.md-and-down {
         margin: 0;
+      }
+      @media $display-breakpoints.sm-and-down {
+        margin: vmin(10, 320) 0;
+        margin-right: vmin(20, 320);
+        white-space nowrap;
       }
     }
   }
